@@ -1,0 +1,132 @@
+﻿using Duyu.Timeline.Model;
+using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Windows;
+using System.Linq;
+
+namespace Duyu.Timeline.ViewModel
+{
+    public class TimeLineViewModel : INotifyPropertyChanged
+    {
+        private ObservableCollection<TimeLineModel> items;
+        public ObservableCollection<TimeLineModel> Items
+        {
+            get { return items; }
+            set
+            {
+                items = value;
+                OnPropertyChanged("Items");
+            }
+        }
+        private ObservableCollection<GroupModel> groups;
+        public ObservableCollection<GroupModel> Groups
+        {
+            get { return groups; }
+            set
+            {
+                groups = value;
+                OnPropertyChanged("Groups");
+            }
+        }
+
+        public TimeLineViewModel()
+        {
+            Items = new ObservableCollection<TimeLineModel>();
+            Groups = new ObservableCollection<GroupModel>();
+            InitGroup();
+        }
+
+        #region 初始化分组
+        private void InitGroup()
+        {
+            DateTime now = DateTime.Now;
+            DateTime end = DateTime.Parse("2008-1-1");
+
+            GroupModel year = null;
+            while (now >= end)
+            {
+                if (year == null)
+                {
+                    year = new GroupModel();
+                    year.Year = now.Year.ToString();
+                    Groups.Add(year);
+                }
+                Month m = new Month();
+                m.Y = now.Year;
+                m.M = now.Month;
+                year.Months.Add(m);
+                if (now.Month == 1)
+                    year = null;
+                now = now.AddMonths(-1);
+            }
+            Groups[0].Visibility = Visibility.Visible;
+        }
+        #endregion
+
+        public void AddItem(DateTime? requestTime, ContentModel model)
+        {
+            string time = model.Time.ToString("yyyy-MM-dd");
+            TimeLineModel item = null;
+            item = Items.FirstOrDefault(n => n.TimeString == time);
+            if (item == null)
+                item = AddTimeLine(requestTime, time);
+            var temp = item.Childs.FirstOrDefault(n => n.ID == model.ID);
+            if (temp == null)
+            {
+                int index = 0;
+                if (item.Childs.Count > 0)
+                    index = model.Time > item.Childs[0].Time ? 0 : item.Childs.Count;
+                item.Childs.Insert(index, model);
+            }
+        }
+
+
+        private TimeLineModel AddTimeLine(DateTime? requestTime, string dateTime)
+        {
+            var item = new TimeLineModel();
+            item.Time = DateTime.Parse(dateTime);
+            int index = 0;
+            if (Items.Count > 0)
+                index = item.Time > Items[0].Time ? 0 : Items.Count;
+            DateTime big = new DateTime();
+            DateTime small = new DateTime();
+            if (requestTime.HasValue)
+            {
+                big = requestTime.Value > item.Time ? requestTime.Value : item.Time;
+                small = requestTime.Value < item.Time ? requestTime.Value : item.Time;
+            }
+            if (Items.Count >= 1)
+            {
+                big = index == 0 ? DateTime.Parse(item.GroupTime) : DateTime.Parse(Items[index - 1].GroupTime);
+                small = index == 0 ? DateTime.Parse(Items[0].GroupTime) : DateTime.Parse(item.GroupTime);
+            }
+
+            int gap = (big.Year - small.Year) * 12 + (big.Month - small.Month) - 1;
+            if (gap > 0)
+            {
+                for (int i = gap; i > 0; i--)
+                {
+                    big = big.AddMonths(-1);
+                    var blank = new TimeLineModel();
+                    blank.Time = big;
+                    blank.Blank = true;
+                    Items.Insert(index, blank);
+                    index++;
+                }
+            }
+
+            Items.Insert(index, item);
+            return item;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+    }
+}

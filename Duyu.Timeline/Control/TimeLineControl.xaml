@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="Duyu.Timeline.Control.TimeLineControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid>
+        <ScrollViewer x:Name="sv_Main" Background="Transparent" Margin="110,0,0,0">
+            <Grid x:Name="ItemContainer">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+
+                <Grid x:Name="TopMoreContainer" Grid.Row="0">
+                    <Button x:Name="TopMore" Background="Transparent">is loading ...</Button>
+                </Grid>
+
+                <ItemsControl x:Name="tc_Items" Grid.Row="1" ItemsSource="{Binding Items}">
+
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel></StackPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="6"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock x:Name="tb_Title" Grid.Column="0" Foreground="Blue" Margin="8" Text="{Binding TimeString}"/>
+                                <Grid Grid.Column="1">
+                                    <Rectangle Fill="Maroon" Width="2" Height="Auto" />
+                                    <Button Background="Maroon" Width="6" Height="6" VerticalAlignment="Top" Margin="0,8,0,0"></Button>
+                                </Grid>
+                                <ItemsControl Grid.Column="2" ItemsSource="{Binding Childs}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <toolkit:WrapPanel />
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="marmoon"  BorderThickness="1" Margin="8">
+                                                <StackPanel Margin="8">
+                                                    <Button Click="Item_Click" CommandParameter="{Binding ID}" Width="120" Height="100">
+                                                        <StackPanel>
+                                                            <TextBlock Text="{Binding ID}" FontSize="14" TextAlignment="Center"/>
+                                                            <TextBlock Text="{Binding Title}"/>
+                                                        </StackPanel>
+                                                    </Button>
+                                                </StackPanel>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+
+                </ItemsControl>
+
+                <Grid x:Name="BottomMoreContainer" Grid.Row="2">
+                    <Button x:Name="BottomMore" Background="Transparent">is loading ...</Button>
+                </Grid>
+
+            </Grid>
+        </ScrollViewer>
+
+        <Canvas Width="200" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <ItemsControl ItemsSource="{Binding Groups}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel></StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Button Content="{Binding Year}" CommandParameter="{Binding Year}" Click="ToYear_Click"></Button>
+                            <ItemsControl Visibility="{Binding Visibility}" ItemsSource="{Binding Months}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel></StackPanel>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Button Margin="10,4,10,0" Content="{Binding MonthString}" CommandParameter="{Binding DateString}" Click="ToMonth_Click"></Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Canvas>
+    </Grid>
+</UserControl>
