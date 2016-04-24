@@ -20,7 +20,6 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <SilverlightApplicationList>{7849805D-167B-426F-BC9E-7AEB957ADF38}|..\Duyu.Timeline\Duyu.Timeline.csproj|ClientBin|False</SilverlightApplicationList>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -63,11 +62,7 @@
     <None Include="ClientAccessPolicy.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <Content Include="ClientBin\Duyu.Timeline.xap" />
-    <Content Include="Duyu.TimelineTestPage.aspx" />
-    <Content Include="Duyu.TimelineTestPage.html" />
     <Content Include="Service1.svc" />
-    <Content Include="Silverlight.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

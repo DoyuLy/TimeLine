@@ -1,14 +1,17 @@
-﻿<xapCache source="I:\OwnProject\Sobey.TimeLine\Sobey.TimeLine\Bin\Debug\Sobey.TimeLine.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="2015/5/2 1:17:44">
-  <file source="I:\OwnProject\Sobey.TimeLine\Sobey.TimeLine\obj\Debug\Sobey.TimeLine.dll" archivePath="Sobey.TimeLine.dll" lastWriteTime="2015/5/2 1:17:42" />
-  <file source="I:\OwnProject\Sobey.TimeLine\Sobey.TimeLine\Bin\Debug\AI3.Common.Core.dll" archivePath="AI3.Common.Core.dll" lastWriteTime="2013/7/12 18:29:34" />
-  <file source="I:\OwnProject\Sobey.TimeLine\Sobey.TimeLine\Bin\Debug\GalaSoft.MvvmLight.Extras.SL5.dll" archivePath="GalaSoft.MvvmLight.Extras.SL5.dll" lastWriteTime="2013/7/12 18:29:35" />
-  <file source="I:\OwnProject\Sobey.TimeLine\Sobey.TimeLine\Bin\Debug\GalaSoft.MvvmLight.SL5.dll" archivePath="GalaSoft.MvvmLight.SL5.dll" lastWriteTime="2013/7/12 18:29:35" />
-  <file source="I:\OwnProject\Sobey.TimeLine\Sobey.TimeLine\Bin\Debug\Microsoft.Practices.ServiceLocation.dll" archivePath="Microsoft.Practices.ServiceLocation.dll" lastWriteTime="2013/7/12 18:29:35" />
-  <file source="I:\OwnProject\Sobey.TimeLine\Sobey.TimeLine.Model\Bin\Debug\Sobey.TimeLine.Model.dll" archivePath="Sobey.TimeLine.Model.dll" lastWriteTime="2015/5/2 1:07:10" />
-  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.dll" archivePath="System.Windows.Controls.dll" lastWriteTime="2011/11/18 17:40:20" />
-  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Toolkit\dec11\Bin\system.windows.controls.toolkit.dll" archivePath="system.windows.controls.toolkit.dll" lastWriteTime="2011/12/9 11:25:04" />
-  <file source="C:\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Toolkit\dec11\Bin\System.Windows.Controls.Toolkit.Internals.dll" archivePath="System.Windows.Controls.Toolkit.Internals.dll" lastWriteTime="2011/12/9 11:25:04" />
-  <file source="C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\Silverlight\v5.0\Libraries\System.Windows.Interactivity.dll" archivePath="System.Windows.Interactivity.dll" lastWriteTime="2013/2/18 14:32:08" />
-  <file source="I:\OwnProject\Sobey.TimeLine\Sobey.TimeLine\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="2013/7/12 18:29:37" />
-  <file source="I:\OwnProject\Sobey.TimeLine\Sobey.TimeLine\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2013/11/5 17:00:27" />
+﻿<xapCache source="E:\YaoWorld\Scattered\Sobey.TimeLine\Sobey.TimeLine\Bin\Debug\Sobey.TimeLine.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="2013/7/1 星期一 11:32:19">
+  <file source="E:\YaoWorld\Scattered\Sobey.TimeLine\Sobey.TimeLine\obj\Debug\Sobey.TimeLine.dll" archivePath="Sobey.TimeLine.dll" lastWriteTime="2013/7/1 星期一 11:32:18" />
+  <file source="D:\workspace\MAM_Platform\Code\CS\Publish\App\Release_Env\AI3.Common.Core.dll" archivePath="AI3.Common.Core.dll" lastWriteTime="2013/6/6 星期四 10:34:53" />
+  <file source="C:\Program Files\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\Silverlight5\GalaSoft.MvvmLight.Extras.SL5.dll" archivePath="GalaSoft.MvvmLight.Extras.SL5.dll" lastWriteTime="2012/10/28 星期日 9:53:18" />
+  <file source="C:\Program Files\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\Silverlight5\GalaSoft.MvvmLight.SL5.dll" archivePath="GalaSoft.MvvmLight.SL5.dll" lastWriteTime="2012/10/28 星期日 9:53:16" />
+  <file source="C:\Program Files\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\Silverlight5\Microsoft.Practices.ServiceLocation.dll" archivePath="Microsoft.Practices.ServiceLocation.dll" lastWriteTime="2012/10/25 星期四 1:44:18" />
+  <file source="E:\YaoWorld\Scattered\Sobey.TimeLine\Sobey.TimeLine.Model\Bin\Debug\Sobey.TimeLine.Model.dll" archivePath="Sobey.TimeLine.Model.dll" lastWriteTime="2013/6/25 星期二 16:15:06" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.dll" archivePath="System.Windows.Controls.dll" lastWriteTime="2011/11/18 星期五 17:40:20" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Toolkit\dec11\Bin\system.windows.controls.toolkit.dll" archivePath="system.windows.controls.toolkit.dll" lastWriteTime="2011/12/9 星期五 11:25:04" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v5.0\Toolkit\dec11\Bin\System.Windows.Controls.Toolkit.Internals.dll" archivePath="System.Windows.Controls.Toolkit.Internals.dll" lastWriteTime="2011/12/9 星期五 11:25:04" />
+  <file source="C:\Program Files\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\Silverlight5\System.Windows.Interactivity.dll" archivePath="System.Windows.Interactivity.dll" lastWriteTime="2012/10/25 星期四 1:44:18" />
+  <file source="D:\workspace\MAM_Platform\Code\CS\Publish\App\Release_Env\Compressor.zlib.dll" archivePath="Compressor.zlib.dll" lastWriteTime="2013/4/18 星期四 13:01:15" />
+  <file source="D:\workspace\MAM_Platform\Code\CS\Publish\App\Release_Env\System.Xml.Serialization.dll" archivePath="System.Xml.Serialization.dll" lastWriteTime="2011/3/10 星期四 0:08:16" />
+  <file source="D:\workspace\MAM_Platform\Code\CS\Publish\App\Release_Env\Newtonsoft.Json.Silverlight.dll" archivePath="Newtonsoft.Json.Silverlight.dll" lastWriteTime="2013/4/18 星期四 13:01:16" />
+  <file source="E:\YaoWorld\Scattered\Sobey.TimeLine\Sobey.TimeLine\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="2013/6/24 星期一 11:37:41" />
+  <file source="E:\YaoWorld\Scattered\Sobey.TimeLine\Sobey.TimeLine\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2013/6/25 星期二 9:50:01" />
 </xapCache>

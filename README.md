@@ -1,4 +1,0 @@
-TimeLine
-========
-
-Silverlight time line

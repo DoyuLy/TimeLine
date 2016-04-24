@@ -54,13 +54,11 @@ namespace Sobey.TimeLine.Controls
 
         void TimeLineControl_Loaded(object sender, RoutedEventArgs e)
         {
-            verticalScrollChanged += TimeLineControl_verticalScrollChanged;
+            verticalScrollChanged += TimeLineControl_VerticalScrollChanged;
         }
 
-       
-
         #region 滚动条事件
-        void TimeLineControl_verticalScrollChanged(object sender, EventArgs e)
+        void TimeLineControl_VerticalScrollChanged(object sender, EventArgs e)
         {
             if (loading)
                 return;

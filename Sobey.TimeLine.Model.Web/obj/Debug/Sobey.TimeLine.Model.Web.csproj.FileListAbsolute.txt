@@ -8,13 +8,3 @@ E:\YaoWorld\Scattered\Sobey.TimeLine\Sobey.TimeLine.Model.Web\bin\Debug\Sobey.Ti
 E:\YaoWorld\Scattered\Sobey.TimeLine\Sobey.TimeLine.Model.Web\obj\Debug\Sobey.TimeLine.Model.Web.dll
 E:\YaoWorld\Scattered\Sobey.TimeLine\Sobey.TimeLine.Model.Web\obj\Debug\Sobey.TimeLine.Model.Web.pdb
 E:\YaoWorld\Scattered\Sobey.TimeLine\Sobey.TimeLine.Model.Web\obj\Debug\Sobey.TimeLine.Model.Web.csprojResolveAssemblyReference.cache
-C:\Users\yu\Desktop\Sobey.TimeLine\Sobey.TimeLine.Model.Web\bin\Debug\Sobey.TimeLine.Model.Web.dll
-C:\Users\yu\Desktop\Sobey.TimeLine\Sobey.TimeLine.Model.Web\bin\Debug\Sobey.TimeLine.Model.Web.pdb
-C:\Users\yu\Desktop\Sobey.TimeLine\Sobey.TimeLine.Model.Web\obj\Debug\Sobey.TimeLine.Model.Web.csprojResolveAssemblyReference.cache
-C:\Users\yu\Desktop\Sobey.TimeLine\Sobey.TimeLine.Model.Web\obj\Debug\Sobey.TimeLine.Model.Web.dll
-C:\Users\yu\Desktop\Sobey.TimeLine\Sobey.TimeLine.Model.Web\obj\Debug\Sobey.TimeLine.Model.Web.pdb
-I:\OwnProject\Sobey.TimeLine\Sobey.TimeLine.Model.Web\bin\Debug\Sobey.TimeLine.Model.Web.dll
-I:\OwnProject\Sobey.TimeLine\Sobey.TimeLine.Model.Web\bin\Debug\Sobey.TimeLine.Model.Web.pdb
-I:\OwnProject\Sobey.TimeLine\Sobey.TimeLine.Model.Web\obj\Debug\Sobey.TimeLine.Model.Web.csprojResolveAssemblyReference.cache
-I:\OwnProject\Sobey.TimeLine\Sobey.TimeLine.Model.Web\obj\Debug\Sobey.TimeLine.Model.Web.dll
-I:\OwnProject\Sobey.TimeLine\Sobey.TimeLine.Model.Web\obj\Debug\Sobey.TimeLine.Model.Web.pdb

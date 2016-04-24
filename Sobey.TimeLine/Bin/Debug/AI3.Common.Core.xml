@@ -1,0 +1,4589 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AI3.Common.Core</name>
+    </assembly>
+    <members>
+        <member name="T:AI3.Common.Core.AnalogTapeHelper">
+            <summary>
+            更新缓存模拟介质的所有介质类型业务逻辑操作类
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.AnalogTapeHelper.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.AnalogTapeHelper.m_allAnalogTape">
+            <summary>
+            全局缓存模拟介质的所有介质类型
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.AnalogTapeHelper.GetAllAnalogTape(System.EventHandler)">
+            <summary>
+             获取模拟介质的所有介质类型
+            </summary>
+            <param name="callBack">回调函数</param>
+        </member>
+        <member name="P:AI3.Common.Core.AnalogTapeHelper.AllAnalogTape">
+            <summary>
+            全局缓存模拟介质的所有介质类型
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.AppHelpHelper">
+            <summary>
+            业务逻辑操作类
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.AppHelpHelper.Instance">
+            <summary>
+            单一实例
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.AppHelpHelper.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.AppHelpHelper.GetAllAppHelpConfig(System.EventHandler)">
+            <summary>
+            获取帮助配置
+            </summary>
+            <param name="callBack">回调函数</param>
+        </member>
+        <member name="M:AI3.Common.Core.AppHelpHelper.GetAppHelpUrl(System.String)">
+            <summary>
+             获取帮助地址
+            </summary>
+            <param name="applicationId">应用名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.ApplicationDispatcher">
+            <summary>
+            ApplicationDispatcher
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.ApplicationDispatcher.Current">
+            <summary>
+             当前应用Dispatcher
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.ApplicationDispatcher.DispatcherAdapter">
+            <summary>
+              Adapts a <see cref="T:System.Windows.Threading.Dispatcher"/> to an IApplicationDispatcher
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.IApplicationDispatcher">
+            <summary>
+             IApplicationDispatcher
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.IApplicationDispatcher.BeginInvoke(System.Action)">
+            <summary>
+             BeginInvoke
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.IApplicationDispatcher.BeginInvoke(System.Delegate,System.Object[])">
+            <summary>
+             BeginInvoke
+            </summary>
+            <param name="d"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.IApplicationDispatcher.CheckAccess">
+            <summary>
+             CheckAccess
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.CompressionExtension.CompressionType">
+            <summary>
+            压缩方式。
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.CompressionExtension.CompressionType.GZip">
+            <summary>
+            GZip 压缩格式
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.CompressionExtension.CompressionType.BZip2">
+            <summary>
+            BZip2 压缩格式
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.CompressionExtension.CompressionType.Zip">
+            <summary>
+            Zip 压缩格式
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.CompressionExtension.CompressionType.ZLib">
+            <summary>
+            ZLib 压缩格式
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.CompressionExtension.CompressionExtension">
+            <summary>
+            使用 SharpZipLib 进行压缩的辅助类，简化对字节数组和字符串进行压缩的操作。
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.CompressionExtension.CompressionExtension.ToCompressedStr``1(``0)">
+            <summary>
+            压缩字符串(对象->xml->UTF8二进制->压缩二进制->Base64字符串)
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.CompressionExtension.CompressionExtension.ToCompressedStr(System.String)">
+            <summary>
+            压缩字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.CompressionExtension.CompressionExtension.ToDeCompressedStr(System.String)">
+            <summary>
+            解压缩字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.CompressionExtension.CompressionExtension.ToDeCompressedObject``1(System.String)">
+            <summary>
+            解压缩字符串(Base64字符串->压缩二进制->UTF8二进制->xml->对象)
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="F:AI3.Common.Core.CompressionExtension.CompressionExtension.CompressionProvider">
+            <summary>
+            压缩供应者，默认为 GZip。
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.CompressionExtension.CompressionExtension.Compress(System.Byte[],System.Int32)">
+            <summary>
+            从原始字节数组生成已压缩的字节数组。
+            </summary>
+            <param name="bytesToCompress">原始字节数组。</param>
+            <param name="level">压缩等级</param>
+            <returns>返回已压缩的字节数组</returns>
+        </member>
+        <member name="M:AI3.Common.Core.CompressionExtension.CompressionExtension.Compress(System.String)">
+            <summary>
+            从原始字符串生成已压缩的字符串。
+            </summary>
+            <param name="stringToCompress">原始字符串。</param>
+            <returns>返回已压缩的字符串。</returns>
+        </member>
+        <member name="M:AI3.Common.Core.CompressionExtension.CompressionExtension.CompressToByte(System.String)">
+            <summary>
+            从原始字符串生成已压缩的字节数组。
+            </summary>
+            <param name="stringToCompress">原始字符串。</param>
+            <returns>返回已压缩的字节数组。</returns>
+        </member>
+        <member name="M:AI3.Common.Core.CompressionExtension.CompressionExtension.DeCompressToByte(System.String)">
+            <summary>
+            从已压缩的字符串生成原始字符串。
+            </summary>
+            <param name="stringToDecompress">已压缩的字符串。</param>
+            <returns>返回原始字符串。</returns>
+        </member>
+        <member name="M:AI3.Common.Core.CompressionExtension.CompressionExtension.DeCompress(System.String)">
+            <summary>
+            从已压缩的字符串生成原始字符串。
+            </summary>
+            <param name="stringToDecompress">已压缩的字符串。</param>
+            <returns>返回原始字符串。</returns>
+        </member>
+        <member name="M:AI3.Common.Core.CompressionExtension.CompressionExtension.DeCompress(System.Byte[])">
+            <summary>
+            从已压缩的字节数组生成原始字节数组。
+            </summary>
+            <param name="bytesToDecompress">已压缩的字节数组。</param>
+            <returns>返回原始字节数组。</returns>
+        </member>
+        <member name="T:AI3.Common.Core.ElementFullScreenHelper">
+            <summary>
+              Make partial UI elements full screen
+              Provider features:
+              make UI element full screen
+              exit full screen and restore UI element
+              support UIElement.ToggleElementFullScreen -- extension methods
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.ElementFullScreenHelper.#cctor">
+            <summary>
+              Initializes the <see cref="!:ElementsFullScreenProvider"/> class.
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.ElementFullScreenHelper.ElementController">
+            <summary>
+              ElementController
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.ElementFullScreenHelper.ElementController.#ctor(System.Windows.UIElement)">
+            <summary>
+              ElementController
+            </summary>
+            <param name = "element"></param>
+        </member>
+        <member name="M:AI3.Common.Core.ElementFullScreenHelper.ElementController.BringElementToFullScreen">
+            <summary>
+              BringElementToFullScreen
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.ElementFullScreenHelper.ElementController.ReturnElementFromFullScreen">
+            <summary>
+              ReturnElementFromFullScreen
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.ElementFullScreenHelper.ElementController.Element">
+            <summary>
+              Element
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.CurrentClientIPAddressHelper">
+            <summary>
+              操作类
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.CurrentClientIPAddressHelper.Instance">
+            <summary>
+              单一实例
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.CurrentClientIPAddressHelper.m_productId">
+            <summary>
+            当前产品名称
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.CurrentClientIPAddressHelper.GetCurrentClientIPAddress">
+            <summary>
+              获取当前客户端IP地址
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.CurrentClientIPAddressHelper.GetCurrentClientIPAddressFormServer(System.EventHandler)">
+            <summary>
+              获取当前客户端IP地址
+            </summary>
+            <param name = "callBack">回调函数</param>
+        </member>
+        <member name="M:AI3.Common.Core.CurrentClientIPAddressHelper.GetWebFileUploadServerAddress">
+            <summary>
+            获取Web文件上传服务端地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.CurrentClientIPAddressHelper.GetServerIp(System.String)">
+            <summary>
+            获取全局配置的IP
+            </summary>
+            <param name="serverName">服务名称</param>
+            <returns>IP地址</returns>
+        </member>
+        <member name="P:AI3.Common.Core.CurrentClientIPAddressHelper.CurrentClientIPAddress">
+            <summary>
+              当前客户端IP地址
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.CurrentClientIPAddressHelper.ProductId">
+            <summary>
+            当前产品名称
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.CurrentClientIPAddressHelper.WebFileUploadServerType">
+            <summary>
+            Web文件上传服务端类型
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.CurrentUserHelper">
+            <summary>
+              操作类
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.CurrentUserHelper.GetCurrentUserInfo">
+            <summary>
+              获取当前用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.CurrentUserHelper.SetCurrentUserInfo(AI3.Common.Core.Entities.UserInfo)">
+            <summary>
+              设置当前用户信息
+            </summary>
+            <param name = "user">用户信息</param>
+        </member>
+        <member name="M:AI3.Common.Core.CurrentUserHelper.SetCurrentUserLangInfo(AI3.Common.Core.Entities.LanguageInfo)">
+            <summary>
+              设置当前用户语言信息
+            </summary>
+            <param name = "lang">语言信息</param>
+        </member>
+        <member name="M:AI3.Common.Core.CurrentUserHelper.SetCurrentUserThemeInfo(AI3.Common.Core.Entities.ThemeInfo)">
+            <summary>
+              设置当前用户风格信息
+            </summary>
+            <param name = "theme">风格信息</param>
+        </member>
+        <member name="T:AI3.Common.Core.Entities.AppHelpeInfo">
+            <summary>
+            实体类
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Entities.AppHelpeInfo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Entities.AppHelpeInfo.m_applicationId">
+            <summary>
+            应用id
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Entities.AppHelpeInfo.m_appHelpUrl">
+            <summary>
+            应用对应的帮助地址
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppHelpeInfo.ApplicationId">
+            <summary>
+            应用id
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppHelpeInfo.AppHelpUrl">
+            <summary>
+            应用对应的帮助地址 /help/source/WebHelp_cn/index.htm 支持语言通配符和应用通配符
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.Entities.AppInterfaceData">
+            <summary>
+              应用数据交换实体类
+            </summary>
+            <remarks>
+              所有应用都使用统一的数据结构
+            </remarks>
+        </member>
+        <member name="M:AI3.Common.Core.Entities.AppInterfaceData.AddExtension(System.String,System.String)">
+            <summary>
+             添加扩展值
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:AI3.Common.Core.Entities.AppInterfaceData.GetExtension(System.String)">
+            <summary>
+            获取扩展值
+            </summary>
+            <param name="key">键</param>
+            <returns>值</returns>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.Addtional">
+            <summary>
+              备用字段1 冗余字段 可空
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.ContentID">
+            <summary>
+              素材ID
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.EntityID">
+            <summary>
+              素材ID long形的字符串
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.EntityName">
+            <summary>
+              素材名称 冗余字段 可空
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.EntityTypeID">
+            <summary>
+              素材分类ID
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.EntityTypeName">
+            <summary>
+            素材类型名称
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.FileGroup">
+            <summary>
+              文件组 冗余字段 可空
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.FileType">
+            <summary>
+              文件类型 冗余字段 可空
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.LayerID">
+            <summary>
+              层次ID(实体层请保持为0)
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.MarkIn">
+            <summary>
+              入点(如果未打点请不要赋值)
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.MarkOut">
+            <summary>
+              出点(如果未打点请不要赋值)
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.Duration">
+            <summary>
+              素材时长(如果非音视频 请空)
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.UserID">
+            <summary>
+              操作者用户ID
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.FrameRate">
+            <summary>
+              帧率(如果非音视频 请空)
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.AudioFormat">
+            <summary>
+              音频格式(如果非音视频 请空)
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.VideoFormat">
+            <summary>
+              视频格式(如果非音视频 请空)
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.AppInterfaceData.ExtensionItems">
+            <summary>
+              其他信息列表 冗余字段 可空
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.Entities.ExtensionItem">
+            <summary>
+            其他信息对象
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.ExtensionItem.Key">
+            <summary>
+            键
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.ExtensionItem.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.Entities.LanguageInfo">
+            <summary>
+              语言信息类
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.LanguageInfo.ShowName">
+            <summary>
+              显示语言名称
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.LanguageInfo.LanguageKey">
+            <summary>
+              语言标示
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.LanguageInfo.FontFamily">
+            <summary>
+              当前语言使用的字体
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Entities.RoleCodeType.Admin">
+            <summary>
+            非涉密系统 超级管理员
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Entities.RoleCodeType.SysAdmin">
+            <summary>
+            涉密系统 系统管理员
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Entities.RoleCodeType.SysSecret">
+            <summary>
+            涉密系统 安全保密员
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Entities.RoleCodeType.SysAudit">
+            <summary>
+            涉密系统 安全审计员
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.Entities.ThemeInfo">
+            <summary>
+              风格皮肤信息类
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.ThemeInfo.IsDefault">
+            <summary>
+              是否是默认
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.ThemeInfo.ThemeName">
+            <summary>
+              风格皮肤名称(必须唯一)
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.ThemeInfo.ThemeUri">
+            <summary>
+              风格皮肤的URI地址
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.Entities.UserCacheInfo">
+            <summary>
+              实体类
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserCacheInfo.Type">
+            <summary>
+              缓存类型
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserCacheInfo.Content">
+            <summary>
+              内容Json字符串
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.Entities.UserInfo">
+            <summary>
+              实体类
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Entities.UserInfo.NormalSystemNestedUserCodes">
+            <summary>
+            非涉密系统的内置UserCode（不允许删除）
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Entities.UserInfo.#ctor">
+            <summary>
+              构造函数
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.Language">
+            <summary>
+              用户语言
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.LastVerifyEffectiveTime">
+            <summary>
+              最后一次验证有效时间
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.Theme">
+            <summary>
+              风格样式名称
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.UserID">
+            <summary>
+              用户ID
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.NickName">
+            <summary>
+              用户名
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.UserCode">
+            <summary>
+              UserCode
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.ID">
+            <summary>
+              用户ID
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.RoleCode">
+            <summary>
+            RoleCode
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.PasswordExpiredDays">
+            <summary>
+            密码过期倒计天数(-1=永不过期，0=已过期，大于0的数字=过期倒计天数)
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.IsSecretSystem">
+            <summary>
+            是否为涉密系统
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.IsAdmin">
+            <summary>
+            是否为非涉密系统的 超级管理员
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.IsSysAdmin">
+            <summary>
+            是否为涉密系统的 系统管理员
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.IsSysSecret">
+            <summary>
+            是否为涉密系统的 安全保密员
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.IsSysAudit">
+            <summary>
+            是否为涉密系统的 安全审计员
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.IsNestedRole">
+            <summary>
+            是否为内置角色
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Entities.UserInfo.IsNestedUser">
+            <summary>
+            是否为内置用户(涉密系统的内置角色对应的用户就是内置用户，而非涉密系统则只有admin是内置用户）
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.GCManager">
+            <summary>
+              内存管理操作类
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.GCManager.Instance">
+            <summary>
+              单一实例
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.GCManager.FreeMemory">
+            <summary>
+             FreeMemory
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.GCManager.FreeMemory(System.Object)">
+            <summary>
+              释放对象
+            </summary>
+            <param name = "obj"></param>
+        </member>
+        <member name="T:AI3.Common.Core.IApplicationInterface">
+            <summary>
+              应用参数接口
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.IApplicationInterface.Globalization(System.Object,System.EventArgs)">
+            <summary>
+              全球化
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.IApplicationInterface.Param">
+            <summary>
+              程序参数
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.IApplicationInterface.WindowID">
+            <summary>
+              窗口标识
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.LanguageHelper">
+            <summary>
+              操作类
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.LanguageHelper.Instance">
+            <summary>
+              单一实例
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.LanguageHelper.currentAppWebServerIPAddress">
+            <summary>
+              当前应用Web端地址
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.LanguageHelper.m_languageList">
+            <summary>
+              系统当前支持的语言
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.LanguageHelper.DefaultLanguageInfo">
+            <summary>
+            默认语言修改 MRC默认为中文
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.LanguageHelper.GetDictionary(System.String,System.String,System.String)">
+            <summary>
+              根据字典Key获取相应的翻译值
+            </summary>
+            <param name = "appName">当前应用名称</param>
+            <param name = "sourceKey">字典Key</param>
+            <param name = "defaultValue">默认值</param>
+            <returns>翻译值</returns>
+        </member>
+        <member name="M:AI3.Common.Core.LanguageHelper.Globalization(System.String,System.EventHandler)">
+            <summary>
+              加载字典文件
+            </summary>
+            <param name = "appName">应用名称</param>
+            <param name = "globalizationCompleted">回调函数</param>
+        </member>
+        <member name="M:AI3.Common.Core.LanguageHelper.SetLanguage(AI3.Common.Core.Entities.LanguageInfo)">
+            <summary>
+              设置当前语言
+            </summary>
+            <param name = "lang">语言信息</param>
+        </member>
+        <member name="M:AI3.Common.Core.LanguageHelper.GetUserLanguageInfo">
+            <summary>
+              GetUserLanguageInfo
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.LanguageHelper.GetCurrentCultureInfo">
+            <summary>
+              获取当前语言的CultureInfo
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.LanguageHelper.GetCultureInfo(AI3.Common.Core.Entities.LanguageInfo)">
+            <summary>
+              根据Language获取CultureInfo
+            </summary>
+            <param name = "lan">Language</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.LanguageHelper.GetAllLanguageInfo(System.EventHandler)">
+            <summary>
+              获取系统当前支持的所有语言
+            </summary>
+            <param name = "callBackEvent">响应回调函数</param>
+        </member>
+        <member name="M:AI3.Common.Core.LanguageHelper.GetAllLanguageInfo(System.Boolean,System.EventHandler)">
+            <summary>
+              获取所有系统注册信息
+            </summary>
+            <param name = "isForceUpdate">是否强制更新为服务端数据</param>
+            <param name = "callBackEvent">响应回调函数</param>
+        </member>
+        <member name="M:AI3.Common.Core.LanguageHelper.AddLanDics(System.Object,System.EventArgs)">
+            <summary>
+              添加字典
+            </summary>
+            <param name = "obj"></param>
+            <param name = "arg"></param>
+        </member>
+        <member name="P:AI3.Common.Core.LanguageHelper.CurrentAppWebServerIPAddress">
+            <summary>
+              当前应用Web端地址(格式如：172.16.2.28:83)
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.LoadLanguageFile">
+            <summary>
+              加载风格文件
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.LoadLanguageFile.#ctor">
+            <summary>
+              构造函数
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.LoadLanguageFile.#ctor(System.String)">
+            <summary>
+              构造函数
+            </summary>
+            <param name = "serverUrl">服务地址</param>
+        </member>
+        <member name="M:AI3.Common.Core.LoadLanguageFile.LoadLanguages(System.String,AI3.Common.Core.Entities.LanguageInfo,System.EventHandler,System.EventHandler)">
+            <summary>
+              加载风格资源
+            </summary>
+            <param name = "appName">应用名称</param>
+            <param name = "lang">语言信息</param>
+            <param name = "loadCompleted">完成事件</param>
+            <param name = "addLanDicsEventHandler">添加语言字典实践</param>
+        </member>
+        <member name="M:AI3.Common.Core.LoadLanguageFile.ParseLine(System.String,System.String@,System.String@)">
+            <summary>
+              解析每行字典内容
+            </summary>
+            <param name = "line">行内容</param>
+            <param name = "key">key</param>
+            <param name = "value">值</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="T:AI3.Common.Core.MouseClickHelper">
+            <summary>
+              鼠标管理帮助类
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.MouseClickHelper.#ctor(System.Windows.UIElement,System.Int32)">
+            <summary>
+              构造函数
+            </summary>
+            <param name = "uiElement"></param>
+            <param name = "timeout"></param>
+        </member>
+        <member name="M:AI3.Common.Core.MouseClickHelper.HandleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+              点击事件
+            </summary>
+            <param name = "sender"></param>
+            <param name = "e"></param>
+        </member>
+        <member name="M:AI3.Common.Core.MouseClickHelper.OnClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+              单击事件
+            </summary>
+            <param name = "sender"></param>
+            <param name = "e"></param>
+        </member>
+        <member name="M:AI3.Common.Core.MouseClickHelper.OnDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+              双击事件
+            </summary>
+            <param name = "sender"></param>
+            <param name = "e"></param>
+        </member>
+        <member name="M:AI3.Common.Core.MouseClickHelper.ResetThread(System.Object)">
+            <summary>
+              重置线程
+            </summary>
+            <param name = "state"></param>
+        </member>
+        <member name="E:AI3.Common.Core.MouseClickHelper.Click">
+            <summary>
+              单击事件
+            </summary>
+        </member>
+        <member name="E:AI3.Common.Core.MouseClickHelper.DoubleClick">
+            <summary>
+              双击事件
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.MouseClickHelper.Timeout">
+            <summary>
+              操作时间
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.MouseClickHelper.UiElement">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.MouseClickHelper.Clicked">
+            <summary>
+              被点击
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.MultiSilverLightAppCommunicationHelper">
+            <summary>
+            多SL通信辅助类
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.MultiSilverLightAppCommunicationHelper.CurrentSilverLightAppTag">
+            <summary>
+            当前应用唯一标示 
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.MultiSilverLightAppCommunicationHelper.BuildKey(System.String)">
+            <summary>
+            构造通信关键字
+            </summary>
+            <param name="sourceKey">用户标示</param>
+            <returns>多应用级标示</returns>
+        </member>
+        <member name="T:AI3.Common.Core.NoKeyFrameHelper">
+            <summary>
+            业务逻辑操作类
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.NoKeyFrameHelper.Instance">
+            <summary>
+            单一实例
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.NoKeyFrameHelper.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.NoKeyFrameHelper.GetNoKeyFrameAddress(System.String)">
+            <summary>
+            获取NoKeyFream地址
+            </summary>
+            <param name="entityType">素材类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.NoKeyFrameHelper.GetPlaceholderKeyframe">
+            <summary>
+            获取placeholder关键帧地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.ServerCfgHelper">
+            <summary>
+            服务端配置帮助类
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.ServerCfgHelper.Instance">
+            <summary>
+            配置访问点
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.ServerCfgHelper.GetConfiguration(System.String,System.EventHandler)">
+            <summary>
+            从服务端获取配置文件项 C:\Sobey\{Product}\Configuration.xml
+            </summary>
+            <param name="cfgKey"></param>
+            <param name="callBack"></param>
+        </member>
+        <member name="M:AI3.Common.Core.ServerCfgHelper.GetConfigValueByKey(System.String,System.EventHandler)">
+            <summary>
+            获取服务器上数据库中的配置
+            </summary>
+            <param name="cfgKey"></param>
+            <param name="callBack"></param>
+        </member>
+        <member name="M:AI3.Common.Core.ServerCfgHelper.UpdateConfigValue(System.String,System.String,System.EventHandler)">
+            <summary>
+            更新服务器上数据库中的配置
+            </summary>
+            <param name="cfgKey"></param>
+            <param name="cfgValue"> </param>
+            <param name="callBack"></param>
+        </member>
+        <member name="P:AI3.Common.Core.ServerCfgHelper.ProductName">
+            <summary>
+            产品名称
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.CfgItem">
+            <summary>
+            配置项
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.CfgItem.Key">
+            <summary>
+            配置名
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.CfgItem.Value">
+            <summary>
+            配置值
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.DragDrop.AllowDrop">
+            <summary>
+              控件是否允许拖放操作
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.AllowDrop.Inherited">
+            <summary>
+              继承
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.AllowDrop.False">
+            <summary>
+              控件不接受用户拖累。
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.AllowDrop.True">
+            <summary>
+              控件可以接受用户拖累。
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.DragDrop.AllowDropBoxes">
+            <summary>
+              Internal classes used to represent boxed values of type <see cref="T:AI3.Common.Core.DragDrop.AllowDrop"/>
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.DragDrop.DragCursor">
+            <summary>
+              Base class for cursors used within the drag drop system.
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragCursor.OnEffectsChanged">
+            <summary>
+              Invoked when the <see cref="P:AI3.Common.Core.DragDrop.DragCursor.Effects"/> have beeen changed.
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragCursor.OnDataContextChanged">
+            <summary>
+              Invoked when the <see cref="P:AI3.Common.Core.DragDrop.DragCursor.DataContext"/> has been changed.
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragCursor.OnBeginDrag(AI3.Common.Core.DragDrop.Primitives.IMouseEventArgs)">
+            <summary>
+              Invoked when a drag drop operation begins.
+            </summary>
+            <param name = "args"></param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragCursor.OnDrag(AI3.Common.Core.DragDrop.Primitives.IMouseEventArgs)">
+            <summary>
+              Invoked when a drag drop operation is in progress and the pointer has moved or the content beneath the cursor has changed.
+            </summary>
+            <param name = "args"></param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragCursor.OnEndDrag">
+            <summary>
+              Invoekd when a drop drop operation ends.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.DragDrop.DragCursor.Effects">
+            <summary>
+              Gets or sets the target drag drop effects.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.DragDrop.DragCursor.DataContext">
+            <summary>
+              Gets or sets the data context for the cursor.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.DragDrop.DragCursor.DragVisualRoots">
+            <summary>
+              Gets the drag cursors root visual elements.
+            </summary>
+            <remarks>
+              When the drag drop system is determining the current drop target it must 
+              ignore any visual elements that form part of the drag cursor.
+            </remarks>
+        </member>
+        <member name="T:AI3.Common.Core.DragDrop.DragDropHelper">
+            <summary>
+              提供支持拖放和拖放操作，包括发起拖和拖放支持
+              添加/删除与拖放相关的事件处理程序。
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.DragDropHelper.AllowDropProperty">
+            <summary>
+             AllowDrop属性
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropHelper.AddDragOverHandler(System.Windows.DependencyObject,AI3.Common.Core.DragDrop.DragEventHandler)">
+            <summary>
+            注册拖过
+            </summary>
+            <param name="element"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropHelper.AddDragEnterHandler(System.Windows.DependencyObject,AI3.Common.Core.DragDrop.DragEventHandler)">
+            <summary>
+            注册拖入事件
+            </summary>
+            <param name="element"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropHelper.AddDragLeaveHandler(System.Windows.DependencyObject,AI3.Common.Core.DragDrop.DragEventHandler)">
+            <summary>
+            注册拖出事件
+            </summary>
+            <param name="element"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropHelper.AddDropHandler(System.Windows.DependencyObject,AI3.Common.Core.DragDrop.DragEventHandler)">
+            <summary>
+            注册拖拽释放事件
+            </summary>
+            <param name="element"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropHelper.RemoveDragOverHandler(System.Windows.DependencyObject,AI3.Common.Core.DragDrop.DragEventHandler)">
+            <summary>
+            移除拖过事件
+            </summary>
+            <param name="element"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropHelper.RemoveDragEnterHandler(System.Windows.DependencyObject,AI3.Common.Core.DragDrop.DragEventHandler)">
+            <summary>
+            移除拖入事件
+            </summary>
+            <param name="element"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropHelper.RemoveDragLeaveHandler(System.Windows.DependencyObject,AI3.Common.Core.DragDrop.DragEventHandler)">
+            <summary>
+            移除拖出事件
+            </summary>
+            <param name="element"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropHelper.RemoveDropHandler(System.Windows.DependencyObject,AI3.Common.Core.DragDrop.DragEventHandler)">
+            <summary>
+            移除拖拽释放事件
+            </summary>
+            <param name="element"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropHelper.SetAllowDrop(System.Windows.DependencyObject,AI3.Common.Core.DragDrop.AllowDrop)">
+            <summary>
+             设置AllowDrop
+            </summary>
+            <param name="dependencyObject"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropHelper.GetAllowDrop(System.Windows.DependencyObject)">
+            <summary>
+            获取AllowDrop
+            </summary>
+            <param name="dependencyObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropHelper.Update">
+            <summary>
+              Updates the state of the current drag drop operation.
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropHelper.Cancel">
+            <summary>
+              Cancels the current drag operation
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.DragDrop.DragDropHelper.IsDragging">
+            <summary>
+              Gets a value indicating whether a drag operation is currently in progress.
+            </summary>
+            <value>
+              <c>true</c> if a drag operation is in progress; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:AI3.Common.Core.DragDrop.DragDropHelper.DragVisualStates">
+            <summary>
+            拖拽视觉状态
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.DragDropHelper.DragVisualStates.DragAll">
+            <summary>
+             DragAll
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.DragDropHelper.DragVisualStates.DragNone">
+            <summary>
+             DragNone
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.DragDropHelper.DragVisualStates.DragCopy">
+            <summary>
+             DragCopy
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.DragDropHelper.DragVisualStates.DragMove">
+            <summary>
+             DragMove
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.DragDropHelper.DragVisualStates.DragLink">
+            <summary>
+             DragLink
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.DragDrop.DragDropHelper.DropVisualStates">
+            <summary>
+            拖放视觉状态
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.DragDropHelper.DropVisualStates.DropTarget">
+            <summary>
+            DropTarget
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.DragDropHelper.DropVisualStates.DropNormal">
+            <summary>
+            DropNormal
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.DragDrop.DragDropBehaviour">
+            <summary>
+              Adapts a <see cref="T:System.Windows.DependencyObject"/> to <see cref="T:AI3.Common.Core.DragDrop.IDropTarget"/>.
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.DragDrop.IDropTarget">
+            <summary>
+              Represents an element that can act as a target of drag-and-drop operations.
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.IDropTarget.DragLeave(AI3.Common.Core.DragDrop.DragEventArgs)">
+            <summary>
+              Called when an object is dragged out of the targets's bounds.
+            </summary>
+            <param name="e">The <see cref="T:AI3.Common.Core.DragDrop.DragEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.IDropTarget.DragEnter(AI3.Common.Core.DragDrop.DragEventArgs)">
+            <summary>
+              Called when an object is dragged into the targets's bounds.
+            </summary>
+            <param name="e">The <see cref="T:AI3.Common.Core.DragDrop.DragEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.IDropTarget.DragOver(AI3.Common.Core.DragDrop.DragEventArgs)">
+            <summary>
+              Called when an object is dragged over the targets's bounds.
+            </summary>
+            <param name="e">The <see cref="T:AI3.Common.Core.DragDrop.DragEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.IDropTarget.Drop(AI3.Common.Core.DragDrop.DragEventArgs)">
+            <summary>
+              Called when a drag-and-drop operation is completed.
+            </summary>
+            <param name="e">The <see cref="T:AI3.Common.Core.DragDrop.DragEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:AI3.Common.Core.DragDrop.IDropTarget.Target">
+            <summary>
+              Gets the underlying object the <see cref="T:AI3.Common.Core.DragDrop.IDropTarget"/> represents.
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropBehaviour.#ctor(System.Windows.DependencyObject)">
+            <summary>
+              Initializes a new instance of the <see cref="T:AI3.Common.Core.DragDrop.DragDropBehaviour"/> class.
+            </summary>
+            <param name="target">The <see cref="T:System.Windows.DependencyObject"/> to adapt.</param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropBehaviour.GetBehaviour(System.Windows.DependencyObject)">
+            <summary>
+              Gets the <see cref="T:AI3.Common.Core.DragDrop.DragDropBehaviour"/> for the specified <see cref="T:System.Windows.DependencyObject"/>
+            </summary>
+            <param name="dependencyObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropBehaviour.SetBehaviour(System.Windows.DependencyObject,AI3.Common.Core.DragDrop.DragDropBehaviour)">
+            <summary>
+              Set the <see cref="T:AI3.Common.Core.DragDrop.DragDropBehaviour"/> for the specified <see cref="T:System.Windows.DependencyObject"/>
+            </summary>
+            <param name="dependencyObject"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragDropBehaviour.GetOrCreateBehaviour(System.Windows.DependencyObject)">
+            <summary>
+              Creates a new <see cref="T:AI3.Common.Core.DragDrop.DragDropBehaviour"/> and associates it with the specified object.
+            </summary>
+            <param name="target"></param>
+            <returns></returns>
+            <remarks>
+              An behaviour is associated with a <see cref="T:System.Windows.DependencyObject"/> via the <see cref="F:AI3.Common.Core.DragDrop.DragDropBehaviour.DragDropBehaviourProperty"/> 
+              attached property. Any previous association will be overwritten.
+            </remarks>
+        </member>
+        <member name="T:AI3.Common.Core.DragDrop.DragDropEffects">
+            <summary>
+              Specifies the effects of the drag-and-drop operation.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.DragDropEffects.None">
+            <summary>
+              The data is not accepted by the drop target.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.DragDropEffects.Copy">
+            <summary>
+              The data is copied to the drop target.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.DragDropEffects.Link">
+            <summary>
+              The data is linked to the drop target .
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.DragDropEffects.Move">
+            <summary>
+              The data is moved to the drop target.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.DragDropEffects.Scroll">
+            <summary>
+              Scrolling is occuring in the drop target.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.DragDrop.DragDropEffects.All">
+            <summary>
+              All of the above.
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.DragEventArgs.GetPosition(System.Windows.UIElement)">
+            <summary>
+              Gets the current position of the mouse relative to a specified <see cref="T:System.Windows.UIElement"/>.
+            </summary>
+            <param name="element">An <see cref="T:System.Windows.UIElement"/> from which to get a relative position.</param>
+            <returns>A point that is relativie to the element specified in <paramref name="element"/></returns>
+        </member>
+        <member name="P:AI3.Common.Core.DragDrop.DragEventArgs.Source">
+            <summary>
+              Gets the source of the event
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.DragDrop.DragEventArgs.AllowedEffects">
+            <summary>
+              Gets the allowed <see cref="T:AI3.Common.Core.DragDrop.DragDropEffects"/> as specified by the originator of the drag event.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.DragDrop.DragEventArgs.Effects">
+            <summary>
+              Gets or sets the <see cref="T:AI3.Common.Core.DragDrop.DragDropEffects"/> supported by the current drop target.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.DragDrop.DragEventArgs.Data">
+            <summary>
+              Gets the data associated with the drag-and-drop operation.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.DragDrop.DragEventArgs.Handled">
+            <summary>
+              Gets or sets a value indicating whether the event has been handled.
+            </summary>
+            <remarks>
+              Setting <see cref="P:AI3.Common.Core.DragDrop.DragEventArgs.Handled"/> to <c>true</c> will prevent the event 
+              from being bubbled up any further within the visual tree.
+            </remarks>
+        </member>
+        <member name="T:AI3.Common.Core.DragDrop.DragEventHandler">
+            <summary>
+              Represents a method that will handler for drag-and-drop routed events.
+            </summary>
+            <param name = "sender">The object where the event handler is attached.</param>
+            <param name = "e">The event data.</param>
+        </member>
+        <member name="T:AI3.Common.Core.DragDrop.ElementTransformDragCursor">
+            <summary>
+              A simple <see cref="T:AI3.Common.Core.DragDrop.DragCursor"/> that drags an element around the screen using 
+              a <see cref="T:System.Windows.Media.Transform"/>.
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.ElementTransformDragCursor.#ctor(System.Windows.UIElement)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dragElement"></param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.ElementTransformDragCursor.#ctor(System.Windows.UIElement,System.Boolean)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dragElement"></param>
+            <param name="enableVisualStates"></param>
+        </member>
+        <member name="P:AI3.Common.Core.DragDrop.ElementTransformDragCursor.DragVisualRoots">
+            <summary>
+            DragVisualRoots
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.DragDrop.Guard">
+            <summary>
+              Provides core Guard utility methods for common parameter validation.
+            </summary>
+            <remarks>
+              Argument exceptions always return the original argument value to allow chaining.
+              <example>
+                <code>
+                  public class BaseObject
+                  {
+                  public BaseObject(object value)
+                  {
+                  this.value = value;
+                  }
+                  }
+              
+                  // --------------------------------------------------------------
+                  // Define a descendent class that requires value to be a non-null 
+                  // reference using a guard condition in the call to base. 
+                  // --------------------------------------------------------------
+              
+                  public class DescendentObject : BaseObject
+                  {
+                  public DescendentObject(object value)
+                  : base(Guard.ArgumentNull("value", value))
+                  {
+                  }
+                  } 
+                </code>
+              </example>
+            </remarks>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentNull(System.String,System.Object)">
+            <summary>
+              Guards against arguments that are null references.
+            </summary>
+            <param name="argumentName">Name of the argument being checked, used to format exception messages.</param>
+            <param name="argumentValue">The value of the argument being checked.</param>
+            <returns>The original <paramref name="argumentValue"/> provided.</returns>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="argumentValue"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentNull``1(System.String,``0)">
+            <summary>
+              Guards against arguments that are null references.
+            </summary>
+            <param name="argumentName">The name of the argument being checked, used to format exception messages.</param>
+            <param name="argumentValue">The value of the argument being checked.</param>
+            <returns>The original <paramref name="argumentValue"/> provided.</returns>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="argumentValue"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentWrongType``1(System.String,System.Object)">
+            <summary>
+              Guards against arguments that are not of the expected <typeparamref name="TArg"/>
+            </summary>
+            <typeparam name="TArg">The expected type of the argument, must be a class type.</typeparam>
+            <param name="argumentName">The name of the argument being checked, used to format exception messages.</param>
+            <param name="argumentValue">The value of the argument being checked.</param>
+            <returns>
+              The original <paramref name="argumentValue"/> provided.
+            </returns>
+            <remarks>
+              This method only works with class types as support for additional types would significantly hinder performance.
+            </remarks>
+            <exception cref="T:System.ArgumentException">If <paramref name="argumentValue"/> is not of the desired type.</exception>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentNullOrWrongType``1(System.String,System.Object)">
+            <summary>
+              Guards against arguments that are a null reference or not of the expected <typeparamref name="TArg"/>
+            </summary>
+            <typeparam name="TArg">The expected type of the argument, must be a class type.</typeparam>
+            <param name="argumentName">The name of the argument being checked, used to format exception messages.</param>
+            <param name="argumentValue">The value of the argument being checked.</param>
+            <returns>
+              The original <paramref name="argumentValue"/> provided.
+            </returns>
+            <remarks>
+              This method only works with class types as support for additional types would significantly hinder performance.
+            </remarks>
+            <exception cref="T:System.ArgumentException">If <paramref name="argumentValue"/> is not of the desired type.</exception>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentNotAssignableAs(System.String,System.Type,System.Type)">
+            <summary>
+              Guards against type arguments that cannot be assigned to the expected <paramref name="targetType"/>.
+            </summary>
+            <param name="argumentName">The name of the argument being checked, used to format exception messages.</param>
+            <param name="targetType">The target type the argument must be assignable as.</param>
+            <param name="argumentValue">The argument value.</param>
+            <exception cref="T:System.ArgumentException">If <paramref name="argumentValue"/> is not assignable as the desired type.</exception>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentNullOrEmpty(System.String,System.String)">
+            <summary>
+              Guards against string arguments that are a null reference or empty.
+            </summary>
+            <param name="argumentName">The name of the argument being checked, used to format exception messages.</param>
+            <param name="argumentValue">The value of the argument being checked.</param>
+            <returns>
+              The original <paramref name="argumentValue"/> provided.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="argumentValue"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">If <paramref name="argumentValue"/> equals <c>string.Empty</c>.</exception>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentContains(System.String,System.String,System.Char[])">
+            <summary>
+              Guards against string arguments that contain illegal characters.
+            </summary>
+            <param name="argumentName">The name of the argument being checked, used to format exception messages.</param>
+            <param name="argumentValue">The value of the argument being checked.</param>
+            <param name="illegalCharacters">The illegal characters to guard against.</param>
+            <exception cref="T:System.ArgumentException">If <paramref name="argumentValue"/> contains characters in <paramref name="illegalCharacters"/>.</exception>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentNullOrContains(System.String,System.String,System.Char[])">
+            <summary>
+              Guards against string arguments that contain illegal characters.
+            </summary>
+            <param name="argumentName">The name of the argument being checked, used to format exception messages.</param>
+            <param name="argumentValue">The value of the argument being checked.</param>
+            <param name="illegalCharacters">The illegal characters to guard against.</param>
+            <exception cref="T:System.ArgumentException">If <paramref name="argumentValue"/> contains characters in <paramref name="illegalCharacters"/>.</exception>
+            <exception cref="T:System.ArgumentNullException">If <paramref name="argumentValue"/> is null.</exception>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentBelowLowerBound(System.String,System.Int32,System.Int32)">
+            <summary>
+              Guard against arguments that are below the specified <paramref name="lowerBound"/>.
+            </summary>
+            <param name="argumentName">The name of the argument being checked, used to format exception messages.</param>
+            <param name="argumentValue">The value of the argument being checked.</param>
+            <param name="lowerBound">The value the argument must not be less than.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="argumentValue"/> is less than <paramref name="lowerBound"/></exception>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentAboveUpperBound(System.String,System.Int32,System.Int32)">
+            <summary>
+              Guard against arguments that are above the specified <paramref name="upperBound"/>.
+            </summary>
+            <param name="argumentName">The name of the argument being checked, used to format exception messages.</param>
+            <param name="argumentValue">The value of the argument being checked.</param>
+            <param name="upperBound">The value the argument must not be greater than.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="argumentValue"/> is greater than <paramref name="upperBound"/></exception>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentOutOfRange(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+              Checks if <paramref name = "argumentValue" /> is lower than <paramref name = "lowerBound" /> or
+              higher than <paramref name = "upperBound" />, and throws an exception if so.
+            </summary>
+            <param name = "argumentName">Name of the argument.</param>
+            <param name = "argumentValue">The argument value.</param>
+            <param name = "lowerBound">The lower bound to check against.</param>
+            <param name = "upperBound">The upper bound to check against.</param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentBelowLowerBound(System.String,System.Int64,System.Int64)">
+            <summary>
+              Guard against arguments that are below the specified <paramref name="lowerBound"/>.
+            </summary>
+            <param name="argumentName">The name of the argument being checked, used to format exception messages.</param>
+            <param name="argumentValue">The value of the argument being checked.</param>
+            <param name="lowerBound">The value the argument must not be less than.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="argumentValue"/> is less than <paramref name="lowerBound"/></exception>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentAboveUpperBound(System.String,System.Int64,System.Int64)">
+            <summary>
+              Guard against arguments that are above the specified <paramref name="upperBound"/>.
+            </summary>
+            <param name="argumentName">The name of the argument being checked, used to format exception messages.</param>
+            <param name="argumentValue">The value of the argument being checked.</param>
+            <param name="upperBound">The value the argument must not be greater than.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="argumentValue"/> is greater than <paramref name="upperBound"/></exception>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentOutOfRange(System.String,System.Int64,System.Int64,System.Int64)">
+            <summary>
+              Checks if <paramref name = "argumentValue" /> is lower than <paramref name = "lowerBound" /> or
+              higher than <paramref name = "upperBound" />, and throws an exception if so.
+            </summary>
+            <param name = "argumentName">Name of the argument.</param>
+            <param name = "argumentValue">The argument value.</param>
+            <param name = "lowerBound">The lower bound to check against.</param>
+            <param name = "upperBound">The upper bound to check against.</param>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentBelowLowerBound(System.String,System.Double,System.Double)">
+            <summary>
+              Guard against arguments that are below the specified <paramref name="lowerBound"/>.
+            </summary>
+            <param name="argumentName">The name of the argument being checked, used to format exception messages.</param>
+            <param name="argumentValue">The value of the argument being checked.</param>
+            <param name="lowerBound">The value the argument must not be less than.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="argumentValue"/> is less than <paramref name="lowerBound"/></exception>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentAboveUpperBound(System.String,System.Double,System.Double)">
+            <summary>
+              Guard against arguments that are above the specified <paramref name="upperBound"/>.
+            </summary>
+            <param name="argumentName">The name of the argument being checked, used to format exception messages.</param>
+            <param name="argumentValue">The value of the argument being checked.</param>
+            <param name="upperBound">The value the argument must not be greater than.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="argumentValue"/> is greater than <paramref name="upperBound"/></exception>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Guard.ArgumentOutOfRange(System.String,System.Double,System.Double,System.Double)">
+            <summary>
+              Checks if <paramref name = "argumentValue" /> is lower than <paramref name = "lowerBound" /> or
+              higher than <paramref name = "upperBound" />, and throws an exception if so.
+            </summary>
+            <param name = "argumentName">Name of the argument.</param>
+            <param name = "argumentValue">The argument value.</param>
+            <param name = "lowerBound">The lower bound to check against.</param>
+            <param name = "upperBound">The upper bound to check against.</param>
+        </member>
+        <member name="T:AI3.Common.Core.DragDrop.PopupDragCursor">
+            <summary>
+              <see cref="T:AI3.Common.Core.DragDrop.DragCursor"/> implementation that uses a <see cref="T:System.Windows.Controls.Primitives.Popup"/> control to host its content.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.DragDrop.PopupDragCursor.ProhibitDropTemplate">
+            <summary>
+              Gets or sets the <see cref="T:System.Windows.DataTemplate"/> to use when the current drag-and-drop target prohibits dropping.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.DragDrop.PopupDragCursor.AllowDropTemplate">
+            <summary>
+              Gets or sets the <see cref="T:System.Windows.DataTemplate"/> to use when the current drag-and-drop target allows dropping.
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.DragDrop.Primitives.DragOperation.Start(System.Windows.Input.MouseEventArgs,System.Windows.Input.Cursor)">
+            <summary>
+              Starts a drag operation from the specified <see cref="T:System.Windows.Input.MouseEventArgs"/>
+            </summary>
+            <param name="fromArgs"></param>
+            <param name="cursor"></param>
+            <returns><c>true</c> if the drag operation was started; otherwise, <c>false</c>.</returns>
+            <remarks>
+              The <see cref="T:AI3.Common.Core.DragDrop.Primitives.DragOperation"/> must capture the mouse to start a drag operation. If mouse capture 
+              is not granted the method will return <c>false</c>.
+            </remarks>
+        </member>
+        <member name="T:AI3.Common.Core.SocketHelper">
+            <summary>
+             Socket请求
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.SocketHelper.Instance">
+            <summary>
+            单例
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.SocketHelper.ConnectSocket">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.SocketHelper.SendMsg(System.String)">
+            <summary>
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:AI3.Common.Core.SocketHelper.SendMessage(System.Collections.Generic.List{System.String},System.EventHandler)">
+            <summary>
+            </summary>
+            <param name="messages"></param>
+            <param name="sendCompleted"></param>
+        </member>
+        <member name="M:AI3.Common.Core.SocketHelper.SendMessage(System.String,System.EventHandler)">
+            <summary>
+            </summary>
+            <param name="message"></param>
+            <param name="sendCompleted"></param>
+        </member>
+        <member name="M:AI3.Common.Core.SocketHelper.TestConnection">
+            <summary>
+             测试连接
+            </summary>
+        </member>
+        <member name="E:AI3.Common.Core.SocketHelper.Received">
+            <summary>
+             返回接收到的数据
+            </summary>
+        </member>
+        <member name="E:AI3.Common.Core.SocketHelper.SocketConnectStatus">
+            <summary>
+             连接状态 0-失败, 1-成功
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.SocketActuator">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.SocketActuator.#ctor(System.Collections.Generic.List{System.String},System.EventHandler)">
+            <summary>
+            </summary>
+            <param name="messages"></param>
+            <param name="sendCompleted"></param>
+        </member>
+        <member name="T:AI3.Common.Core.LoadThemesFile">
+            <summary>
+              加载风格文件
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.LoadThemesFile.#ctor">
+            <summary>
+              构造函数
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.LoadThemesFile.#ctor(System.String)">
+            <summary>
+              构造函数
+            </summary>
+            <param name = "serverUrl">服务地址</param>
+        </member>
+        <member name="M:AI3.Common.Core.LoadThemesFile.LoadThemes(AI3.Common.Core.Entities.ThemeInfo,System.EventHandler)">
+            <summary>
+              加载风格资源
+            </summary>
+            <param name = "theme">风格信息</param>
+            <param name = "loadCompleted">完成事件</param>
+        </member>
+        <member name="T:AI3.Common.Core.ThemesHelper">
+            <summary>
+             ThemesHelper
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.ThemesHelper.GetAllThemes">
+            <summary>
+              获取所有皮肤
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.ThemesHelper.GetDefaultThemeInfo">
+            <summary>
+              获取默认样式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.ThemesHelper.LoadThemes(System.EventHandler)">
+            <summary>
+              加载风格样式文件
+            </summary>
+            <param name = "loadCompleted"></param>
+        </member>
+        <member name="M:AI3.Common.Core.ThemesHelper.SetTheme(System.String)">
+            <summary>
+              设置当前风格皮肤
+            </summary>
+            <param name = "themeName">风格名称</param>
+        </member>
+        <member name="M:AI3.Common.Core.ThemesHelper.SetTheme(AI3.Common.Core.Entities.ThemeInfo)">
+            <summary>
+              设置当前风格皮肤
+            </summary>
+            <param name = "theme">风格信息</param>
+        </member>
+        <member name="T:AI3.Common.Core.UserCacheHelpercs">
+            <summary>
+              操作类
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.UserCacheHelpercs.Instance">
+            <summary>
+              单一实例
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.UserCacheHelpercs.SaveOrUpdateUserCacheInfo(AI3.Common.Core.Entities.UserCacheInfo,System.EventHandler)">
+            <summary>
+              报错/更新用户缓存信息
+            </summary>
+            <param name = "userCache">用户缓存信息</param>
+            <param name = "callBackEvent">回调函数</param>
+        </member>
+        <member name="M:AI3.Common.Core.UserCacheHelpercs.GetUserCacheInfo(System.String,System.EventHandler)">
+            <summary>
+              获取用户缓存信息
+            </summary>
+            <param name = "userCacheType">用户缓存信息类型</param>
+            <param name = "callBackEvent">回调函数</param>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.CookieHelper">
+            <summary>
+              Cookie帮助类
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.CookieHelper.DeleteCookie(System.String)">
+            <summary>
+              删除Cookie
+            </summary>
+            <param name = "key"></param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.CookieHelper.Exists(System.String)">
+            <summary>
+              判断是否存在
+            </summary>
+            <param name = "key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.CookieHelper.GetCookie(System.String)">
+            <summary>
+              获取Cookie
+            </summary>
+            <param name = "key">键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.CookieHelper.SetCookie(System.String,System.String)">
+            <summary>
+              设置Cookie
+            </summary>
+            <param name = "key"></param>
+            <param name = "value"></param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.CookieHelper.GetAllCookies">
+            <summary>
+              获取所有Cookie
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.CookieHelper.GetAllCookiesFromIsolatedStorage">
+            <summary>
+             GetAllCookiesFromIsolatedStorage
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DataTransform.DataConvert">
+            <summary>
+              数据转换类
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CBoolean(System.String)">
+            <summary>
+              string 转换为 Bool
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CDate(System.Object)">
+            <summary>
+              转换为时间
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CDate(System.String)">
+            <summary>
+              转换为时间
+            </summary>
+            <param name = "input">输入字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CDate(System.String,System.Nullable{System.DateTime})">
+            <summary>
+              转换为时间
+            </summary>
+            <param name = "input">输入字符串</param>
+            <param name = "outTime">返回</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CDate(System.String,System.DateTime)">
+            <summary>
+              转换为时间
+            </summary>
+            <param name = "input">输入字符串</param>
+            <param name = "outTime">返回</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CDateString(System.String)">
+            <summary>
+              时间格式化
+            </summary>
+            <param name = "input"></param>
+            <returns>yyyy-MM-dd格式</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CDecimal(System.Object)">
+            <summary>
+              ToDecimal
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CDecimal(System.String)">
+            <summary>
+              ToDecimal
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CDecimal(System.Object,System.Decimal)">
+            <summary>
+              ToDecimal
+            </summary>
+            <param name = "input">要转换的值</param>
+            <param name = "defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CDecimal(System.String,System.Decimal)">
+            <summary>
+              ToDecimal
+            </summary>
+            <param name = "input">要转换的值</param>
+            <param name = "defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CDouble(System.Object)">
+            <summary>
+              ToDouble
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CDouble(System.String)">
+            <summary>
+              ToDouble
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CDouble(System.Object,System.Double)">
+            <summary>
+              ToDouble
+            </summary>
+            <param name = "input"></param>
+            <param name = "defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CDouble(System.String,System.Double)">
+            <summary>
+              ToDouble
+            </summary>
+            <param name = "input"></param>
+            <param name = "defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CInt(System.Object)">
+            <summary>
+              ToInt
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CInt(System.String)">
+            <summary>
+              ToInt
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CInt(System.Object,System.Int32)">
+            <summary>
+              ToInt
+            </summary>
+            <param name = "input"></param>
+            <param name = "defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CInt(System.String,System.Int32)">
+            <summary>
+              ToInt
+            </summary>
+            <param name = "input"></param>
+            <param name = "defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CLong(System.Object)">
+            <summary>
+              ToLong
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CLong(System.String)">
+            <summary>
+              ToLong
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CLong(System.Object,System.Int32)">
+            <summary>
+              ToLong
+            </summary>
+            <param name = "input"></param>
+            <param name = "defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CLongByString(System.String,System.Int64)">
+            <summary>
+              ToLong
+            </summary>
+            <param name = "input"></param>
+            <param name = "defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CFloat(System.Object)">
+            <summary>
+              ToFloat
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CFloat(System.String)">
+            <summary>
+              ToFloat
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CFloat(System.Object,System.Single)">
+            <summary>
+              ToFloat
+            </summary>
+            <param name = "input"></param>
+            <param name = "defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.CFloat(System.String,System.Single)">
+            <summary>
+              ToFloat
+            </summary>
+            <param name = "input"></param>
+            <param name = "defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.ConvertIListToList``1(System.Collections.IList)">
+            <summary>
+              转换IList为指定类型的List
+            </summary>
+            <typeparam name = "T">指定的集合中泛型的类型</typeparam>
+            <param name = "gbList">需要转换的IList</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataConvert.ToColor(System.String)">
+            <summary>
+              将字符串转换为Color
+            </summary>
+            <param name = "colorString">颜色值</param>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DataTransform.DataSecurity">
+            <summary>
+              数据安全以及过滤
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataSecurity.ConvertToJavaScript(System.String)">
+            <summary>
+              转换为JavaScript
+            </summary>
+            <param name = "str">要转换的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataSecurity.FilterBadChar(System.String)">
+            <summary>
+              过滤脏字符串
+            </summary>
+            <param name = "strchar">要过滤的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataSecurity.FilterSqlKeyword(System.String)">
+            <summary>
+              过滤SQL关键字
+            </summary>
+            <param name = "strchar">sql语句</param>
+            <returns>过滤后的sql</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataSecurity.HtmlDecode(System.Object)">
+            <summary>
+              HTML解码
+            </summary>
+            <param name = "value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataSecurity.HtmlDecode(System.String)">
+            <summary>
+              HTML解码
+            </summary>
+            <param name = "value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataSecurity.HtmlEncode(System.Object)">
+            <summary>
+              HTML编码
+            </summary>
+            <param name = "value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataSecurity.HtmlEncode(System.String)">
+            <summary>
+              HTML编码
+            </summary>
+            <param name = "str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataSecurity.MakeFileRndName">
+            <summary>
+              生成随机文件名(yyyyMMddHHmmss+4位随机)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataSecurity.MakeFolderName">
+            <summary>
+              生成文件名(yyyyMM)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataSecurity.SqlCheck(System.String)">
+            <summary>
+              检查SQL注入
+            </summary>
+            <param name = "sqlstr">sql语句</param>
+            <returns>有注入返回true/无注入返回false</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataSecurity.SqlFilter(System.String)">
+            <summary>
+              过滤SQL注入
+            </summary>
+            <param name = "sqlstr">原SQL</param>
+            <returns>过滤后的SQL</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataSecurity.XmlEncode(System.String)">
+            <summary>
+              Xml编码
+            </summary>
+            <param name = "str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DataTransform.DataValidator">
+            <summary>
+              数据验证
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataValidator.IsAreaCode(System.String)">
+            <summary>
+              是否是区域码
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataValidator.IsDecimal(System.String)">
+            <summary>
+              是否是Decimal
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataValidator.IsDecimalSign(System.String)">
+            <summary>
+              是否是Decimal(包括正负)
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataValidator.IsEmail(System.String)">
+            <summary>
+              是否是Email地址
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataValidator.IsHasChzn(System.String)">
+            <summary>
+              检测是否有中文字符
+            </summary>
+            <param name = "inputData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataValidator.IsIP(System.String)">
+            <summary>
+              是否是IP地址
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataValidator.IsNumber(System.String)">
+            <summary>
+              是否是数字
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataValidator.IsNumberSign(System.String)">
+            <summary>
+              是否是数字(包括正负)
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataValidator.IsPostCode(System.String)">
+            <summary>
+              否是是邮政编码
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataValidator.IsUrl(System.String)">
+            <summary>
+              是否是URL连接
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.DataValidator.IsValidUserName(System.String)">
+            <summary>
+              是否是合法的用户名
+              长度小于20，不包括\\/\"[]:|&lt;&gt;+=;,?*@
+            </summary>
+            <param name = "userName">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DataTransform.FileSizeTransferHelper">
+            <summary>
+            文件大小单位转换
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.FileSizeTransferHelper.TransferBToKb(System.Double)">
+            <summary>
+            字节转换为K
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.FileSizeTransferHelper.TransferKbToB(System.Double)">
+            <summary>
+            K转换为字节
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.FileSizeTransferHelper.TransferKbToM(System.Double)">
+            <summary>
+            K转换为M
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.FileSizeTransferHelper.TranferMtoKb(System.Double)">
+            <summary>
+            M转换为K
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.FileSizeTransferHelper.TransferMToG(System.Double)">
+            <summary>
+            M转换为G
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.FileSizeTransferHelper.TransferGToM(System.Double)">
+            <summary>
+            G转换为M
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.FileSizeTransferHelper.TransferBToG(System.Double)">
+            <summary>
+            字节转换为G
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.FileSizeTransferHelper.TransferSize(System.Double)">
+            <summary>
+            转换文件大小为最接近的单位
+            </summary>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DataTransform.SmpteScanFormat">
+            <summary>
+             Scan Format enumeration. 
+            </summary>
+            <remarks>
+              Scan Format supported by the Timecode class include, 59.94i, 59.94p, 50i, 50p, 29.97p, 25p, 24p, 23.98p.
+            </remarks>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteScanFormat.Smpte2398P">
+            <summary>
+              SMPTE 23.98 Progressive.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteScanFormat.Smpte24P">
+            <summary>
+              SMPTE 24 fps Progressive.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteScanFormat.Smpte25P">
+            <summary>
+              SMPTE 25 fps fProgressive.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteScanFormat.Smpte2997P">
+            <summary>
+              SMPTE 29.97 fps Progressive.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteScanFormat.Smpte30P">
+            <summary>
+              SMPTE 29.97 fps Progressive.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteScanFormat.Smpte50P">
+            <summary>
+              SMPTE 50 fps Progressive.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteScanFormat.Smpte50I">
+            <summary>
+              SMPTE 25 fps Interlaced.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteScanFormat.Smpte5994P">
+            <summary>
+              SMPTE 59.94 fps Progressive.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteScanFormat.Smpte5994I">
+            <summary>
+              SMPTE 29.97 fps Interlaced.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteScanFormat.Smpte60P">
+            <summary>
+              SMPTE 60 fps Progressive.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteScanFormat.Smpte60I">
+            <summary>
+              SMPTE 30 fps Interlaced.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteScanFormat.Unknown">
+            <summary>
+              UnKnown Value.
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DataTransform.TimeCodeCalculate">
+            <summary>
+            时码计算
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeCalculate.Add(System.String,System.String,System.Boolean)">
+            <summary>
+            时码相加
+            </summary>
+            <param name="timeCodeOne">00:00:12.2</param>
+            <param name="timeCodeTwo">00:00:12.2</param>
+            <param name="appendFrame"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DataTransform.TimeStruct">
+            <summary>
+            时间结构
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeStruct.Hour">
+            <summary>
+            小时
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeStruct.Minute">
+            <summary>
+            分钟
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeStruct.Second">
+            <summary>
+            秒
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DataTransform.MpcVideoStandard">
+            <summary>
+              桌面视频制式标准枚举定义
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper">
+            <summary>
+              时码转换帮助类
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStFrameRate25">
+            <summary>
+              PAL frame  frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStScale25">
+            <summary>
+              PAL scale
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStFrameRate2997">
+            <summary>
+              NTSC frame  frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStScale2997">
+            <summary>
+              NTSC scale
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStFrameRate30">
+            <summary>
+              30-F frame frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStScale30">
+            <summary>
+              30-F scale
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStFrameRate24">
+            <summary>
+              24-F field frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStScale24">
+            <summary>
+              24-F scale
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStFrameRate2398">
+            <summary>
+              2398-F frame frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStScale2398">
+            <summary>
+              2398-F scale
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStFrameRate50">
+            <summary>
+              PAL frame  frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStScale50">
+            <summary>
+              PAL scale
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStFrameRate5994">
+            <summary>
+              NTSC frame  frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStScale5994">
+            <summary>
+              NTSC scale
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStFrameRate60">
+            <summary>
+              60-F frame frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcStScale60">
+            <summary>
+              60-F scale
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesSecond25">
+            <summary>
+              25 Frame: frames per second
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesMinute25">
+            <summary>
+              25 Frame: frames per minute
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesHour25">
+            <summary>
+              25 Frame: frames per hour
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesSecond24">
+            <summary>
+              24 Frame: frames per second
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesMinute24">
+            <summary>
+              24 Frame: frames per minute
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesHour24">
+            <summary>
+              24 Frame: frames per hour
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesSecondNodrop30">
+            <summary>
+              30 NO_DROP Frame: frames per second
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesMinuteNodrop30">
+            <summary>
+              30 NO_DROP Frame: frames per minute
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesHourNodrop30">
+            <summary>
+              30 NO_DROP Frame: frames per hour
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesMinute30Drop">
+            <summary>
+              30 DROP Frame: frames per minute
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFrames10Minutes30Drop">
+            <summary>
+              30 DROP Frame: frames per 10 minutes
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesHour30Drop">
+            <summary>
+              30 DROP Frame: frames per hour
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesSecond50">
+            <summary>
+              50 Frame: frames per second
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesMinute50">
+            <summary>
+              50 Frame: frames per minute
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesHour50">
+            <summary>
+              50 Frame: frames per hour
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesMinute60Drop">
+            <summary>
+              60 DROP Frame: frames per minute
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFrames10Minutes60Drop">
+            <summary>
+              60 DROP Frame: frames per 10 minutes
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesHour60Drop">
+            <summary>
+              60 DROP Frame: frames per hour
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesSecond60">
+            <summary>
+              60 Frame: frames per second
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesMinute60">
+            <summary>
+              60 Frame: frames per minute
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.MpcFramesHour60">
+            <summary>
+              60 Frame: frames per hour
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.m_mpcStRate25">
+            <summary>
+              PAL field frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.m_mpcStRate2997">
+            <summary>
+              NTSC field frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.m_mpcStRate30">
+            <summary>
+              30-F field frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.m_mpcStRate24">
+            <summary>
+              24-F field frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.m_mpcStRate2398">
+            <summary>
+              2398-F field frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.m_mpcStRate50">
+            <summary>
+              PAL field frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.m_mpcStRate5994">
+            <summary>
+              NTSC field frequency
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.m_mpcStRate60">
+            <summary>
+              60-F field frequency
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.Frame2L100Ns(System.Int64,System.Double,System.Double)">
+            <summary>
+              帧转百纳秒
+            </summary>
+            <param name = "lFrame">帧</param>
+            <param name = "dRate">帧率</param>
+            <param name = "dScale"></param>
+            <returns>百纳秒</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.Frame2L100Ns(System.Int64,System.Double)">
+            <summary>
+              帧转百纳秒
+            </summary>
+            <param name = "dFrame">帧</param>
+            <param name = "dFrameRate">帧率</param>
+            <returns>百纳秒</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.Frame2Second(System.Int64,System.Double,System.Double)">
+            <summary>
+              帧转秒
+            </summary>
+            <param name = "lFrame">帧</param>
+            <param name = "dRate">帧率</param>
+            <param name = "dScale"></param>
+            <returns>秒</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.Frame2Second(System.Int64,System.Double)">
+            <summary>
+              帧转秒
+            </summary>
+            <param name = "dFrame">帧</param>
+            <param name = "dFrameRate">帧率</param>
+            <returns>秒</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.Frame2Tc(System.Double,System.Double,System.Double)">
+            <summary>
+              帧转时码
+            </summary>
+            <param name = "dFrame">帧</param>
+            <param name = "dRate">帧率</param>
+            <param name = "dScale"></param>
+            <returns>时码字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.Frame2Tc(System.Int64,System.Double)">
+            <summary>
+              帧转时码
+            </summary>
+            <param name = "dFrame">帧</param>
+            <param name = "dFrameRate">帧率</param>
+            <returns>时码字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.FrameRate2RateAndScale(System.Double,System.Double@,System.Double@)">
+            <summary>
+              获取帧率和修正值
+            </summary>
+            <param name = "dFrameRate">输入帧率</param>
+            <param name = "dRate">修正帧率</param>
+            <param name = "dScale">修正值</param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.L100Ns2Frame(System.Int64,System.Double,System.Double)">
+            <summary>
+              百纳秒转帧
+            </summary>
+            <param name = "l100Ns">百纳秒</param>
+            <param name = "dRate">帧率</param>
+            <param name = "dScale">修正值</param>
+            <returns>帧</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.L100Ns2Frame(System.Int64,System.Double)">
+            <summary>
+              百纳秒转帧
+            </summary>
+            <param name = "l100Ns">百纳秒</param>
+            <param name = "dFrameRate">帧率</param>
+            <returns>帧</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.L100Ns2Tc(System.Int64,System.Boolean)">
+            <summary>
+              百纳秒转时码
+            </summary>
+            <param name = "l100Ns">百纳秒</param>
+            <param name = "dropFrame">是否是丢帧</param>
+            <returns>时码字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.L100Ns2Tc(System.Int64,System.Double)">
+            <summary>
+              百纳秒转时码
+            </summary>
+            <param name = "l100Ns">百纳秒</param>
+            <param name = "dFrameRate">帧率</param>
+            <returns>时码字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.Rate2ScaleFrameRateAndFrameScale(System.Double,System.Double,System.Double@,System.Double@)">
+            <summary>
+              帧率修正
+            </summary>
+            <param name = "dRate">帧率</param>
+            <param name = "dScale">修正值</param>
+            <param name = "dFrameRate">输出帧率</param>
+            <param name = "dFrameScale">输出修正值</param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.Second2Frame(System.Double,System.Double,System.Double)">
+            <summary>
+              秒转帧
+            </summary>
+            <param name = "dbSec">秒数</param>
+            <param name = "dRate">帧率</param>
+            <param name = "dScale">修正值</param>
+            <returns>帧数</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.Second2Frame(System.Double,System.Double)">
+            <summary>
+              秒转帧
+            </summary>
+            <param name = "dbSec">秒数</param>
+            <param name = "dFrameRate">帧率</param>
+            <returns>帧数</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCodeConvertHelper.FormatTimeCodeString(System.Int64,System.Int64,System.Int64,System.Int64,System.Boolean)">
+            <summary>
+              格式化时码字符串
+            </summary>
+            <param name = "hours">小时数</param>
+            <param name = "minutes">分指数</param>
+            <param name = "seconds">秒数</param>
+            <param name = "frames">帧数</param>
+            <param name = "dropFrame">是否是丢帧</param>
+            <returns>格式化后的时码字符串</returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DataTransform.SmpteFrameRate">
+            <summary>
+              SMPTE Frame Rates enumeration. Use this enumeration with the Timecode struct to set the framerate for the Timecode.
+            </summary>
+            <remarks>
+              Framerates supported by the Timecode class include, 23.98 IVTC Film Sync, 24fps Film Sync, 25fps PAL, 29.97 drop frame,
+              29.97 Non drop, and 30fps.
+            </remarks>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteFrameRate.Smpte2398">
+            <summary>
+              SMPTE 23.98 frame rate. Also known as Film Sync.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteFrameRate.Smpte24">
+            <summary>
+              SMPTE 24 fps frame rate.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteFrameRate.Smpte25">
+            <summary>
+              SMPTE 25 fps frame rate. Also known as PAL.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteFrameRate.Smpte2997Drop">
+            <summary>
+              SMPTE 29.97 fps Drop Frame timecode. Used in the NTSC television system.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteFrameRate.Smpte2997NonDrop">
+            <summary>
+              SMPTE 29.97 fps Non Drop Fram timecode. Used in the NTSC television system.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteFrameRate.Smpte30">
+            <summary>
+              SMPTE 30 fps frame rate.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteFrameRate.Smpte50">
+            <summary>
+              SMPTE 50 fps frame rate.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteFrameRate.Smpte5994">
+            <summary>
+              SMPTE 59.94 fps frame rate.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteFrameRate.Smpte60">
+            <summary>
+              SMPTE 60 fps frame rate.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.SmpteFrameRate.Unknown">
+            <summary>
+              UnKnown Value.
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DataTransform.TimeCode">
+            <summary>
+              Represents a SMPTE 12M standard time code and provides conversion operations to various SMPTE time code formats and rates.
+            </summary>
+            <remarks>
+              Framerates supported by the TimeCode class include, 23.98 IVTC Film Sync, 24fps Film Sync, 25fps PAL, 29.97 drop frame,
+              29.97 Non drop, and 30fps, 50fps, 59.94.
+            </remarks>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCode.m_totalFrames">
+            <summary>
+              The private Timespan used to track absolute time for this instance.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DataTransform.TimeCode.m_frameRate">
+            <summary>
+              The frame rate for this instance.
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.#ctor(System.Int64,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+              Initializes a new instance of the TimeCode struct using an absolute time value, and the SMPTE framerate.
+            </summary>
+            <param name = "lFrame">The long that represents the frame value.</param>
+            <param name = "rate">The SMPTE framerate that this instance should use.</param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.FromFrames(System.Int64,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+              Returns a TimeCode that represents a specified number of frames.
+            </summary>
+            <param name="value">A number of frames.</param>
+            <param name="rate">The framerate of the Timecode.</param>
+            <returns>A TimeCode that represents value.</returns>
+            <exception cref="T:System.OverflowException">
+              value is less than TimeCode.MinValue or greater than TimeCode.MaxValue.-or-value
+              is System.Double.PositiveInfinity.-or-value is System.Double.NegativeInfinity.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+              value is equal to System.Double.NaN.
+            </exception>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.FromHours(System.Double,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+              Returns a TimeCode that represents a specified number of hours, where
+              the specification is accurate to the nearest millisecond.
+            </summary>
+            <param name="value">A number of hours accurate to the nearest millisecond.</param>
+            <param name="rate">The desired framerate for this instance.</param>
+            <returns> A TimeCode that represents value.</returns>
+            <exception cref="T:System.OverflowException">
+              value is less than TimeCode.MinValue or greater than TimeCode.MaxValue.
+              -or-value is System.Double.PositiveInfinity.-or-value is System.Double.NegativeInfinity.
+            </exception>
+            <exception cref="T:System.FormatException">
+              value is equal to System.Double.NaN.
+            </exception>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.FromMinutes(System.Double,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+              Returns a TimeCode that represents a specified number of minutes,
+              where the specification is accurate to the nearest millisecond.
+            </summary>
+            <param name="value">A number of minutes, accurate to the nearest millisecond.</param>
+            <param name="rate">The <see cref="T:AI3.Common.Core.Utility.DataTransform.SmpteFrameRate"/> to use for the calculation.</param>
+            <returns>A TimeCode that represents value.</returns>
+            <exception cref="T:System.OverflowException">
+              value is less than TimeCode.MinValue or greater than TimeCode.MaxValue.-or-value
+              is System.Double.PositiveInfinity.-or-value is System.Double.NegativeInfinity.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+              value is equal to System.Double.NaN.
+            </exception>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.FromSeconds(System.Double,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+              Returns a TimeCode that represents a specified number of seconds,
+              where the specification is accurate to the nearest millisecond.
+            </summary>
+            <param name="value">A number of seconds, accurate to the nearest millisecond.</param>
+            ///
+            <param name="rate">The framerate of the Timecode.</param>
+            <returns>A TimeCode that represents value.</returns>
+            <exception cref="T:System.OverflowException">
+              value is less than TimeCode.MinValue or greater than TimeCode.MaxValue.-or-value
+              is System.Double.PositiveInfinity.-or-value is System.Double.NegativeInfinity.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+              value is equal to System.Double.NaN.
+            </exception>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.FromSecondsNoCorrecte(System.Double,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+              Returns a TimeCode that represents a specified number of seconds,
+              where the specification is accurate to the nearest millisecond.
+            </summary>
+            <param name="value">A number of seconds, accurate to the nearest millisecond.</param>
+            ///
+            <param name="rate">The framerate of the Timecode.</param>
+            <returns>A TimeCode that represents value.</returns>
+            <exception cref="T:System.OverflowException">
+              value is less than TimeCode.MinValue or greater than TimeCode.MaxValue.-or-value
+              is System.Double.PositiveInfinity.-or-value is System.Double.NegativeInfinity.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+              value is equal to System.Double.NaN.
+            </exception>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.From100Ns(System.Int64,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+              来自百纳秒
+            </summary>
+            <param name = "value">百纳秒</param>
+            <param name = "rate">帧率</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.ParseFramerate(System.Double)">
+            <summary>
+              Parses a framerate value as double and converts it to a member of the SmpteFrameRate enumeration.
+            </summary>
+            <param name = "rate">Double value of the framerate.</param>
+            <returns>A SmpteFrameRate enumeration value that matches the incoming rates.</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.ParseScanFormat(System.String)">
+            <summary>
+              Parses a framerate value as double and converts it to a member of the SmpteFrameRate enumeration.
+            </summary>
+            <param name = "scanFormat">扫描方式.</param>
+            <returns>扫描方式枚举.</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.ValidateSmpte12MTimecode(System.String)">
+            <summary>
+              Validates that the string provided is in the correct format for SMPTE 12M time code.
+            </summary>
+            <param name = "timeCode">String that is the time code.</param>
+            <returns>True if this is a valid SMPTE 12M time code string.</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.ValidateSmpte12MTimecode(System.Int32)">
+            <summary>
+              Validates that the hexadecimal formatted integer provided is in the correct format for SMPTE 12M time code
+              Time code is stored so that the hexadecimal value is read as if it were an integer value. 
+              That is, the time code value 0x01133512 does not represent integer 18035986, rather it specifies 1 hour, 13 minutes, 35 seconds, and 12 frames.
+            </summary>
+            <param name = "windowsMediaTimeCode">Integer that is the time code stored in hexadecimal format.</param>
+            <returns>True if this is a valid SMPTE 12M time code string.</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.ToString">
+            <summary>
+              Returns the SMPTE 12M string representation of the value of this instance.
+            </summary>
+            <returns>
+              A string that represents the value of this instance. The return value is
+              of the form: hh:mm:ss:ff for non-drop frame and hh:mm:ss;ff for drop frame code
+              with "hh" hours, ranging from 0 to 23, "mm" minutes
+              ranging from 0 to 59, "ss" seconds ranging from 0 to 59, and  "ff"  based on the 
+              chosen framerate to be used by the time code instance.
+            </returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.ToString(AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+              Outputs a string of the current time code in the requested framerate.
+            </summary>
+            <param name = "rate">The SmpteFrameRate required for the string output.</param>
+            <returns>SMPTE 12M formatted time code string converted to the requested framerate.</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.GetFrameRate(AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+              Get frame rate
+            </summary>
+            <param name = "rate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.GetFrameRate(AI3.Common.Core.Utility.DataTransform.SmpteScanFormat)">
+            <summary>
+              Get frame rate
+            </summary>
+            <param name = "scanFormat">扫描格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeCode.CorrecteSeekSecondsTo100Ns(System.Double,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+              修正Seek秒的值，保证在正确的帧的安全范围内
+            </summary>
+            <param name = "seconds">秒</param>
+            <param name = "rate">帧率</param>
+            <returns></returns>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.MaxValue">
+            <summary>
+              Gets the maximum TimeCode value. The Max value for Timecode. This field is read-only.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.MinValue">
+            <summary>
+              Gets the minimum TimeCode value. This field is read-only.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.TicksPerDay">
+            <summary>
+              Gets the number of ticks in 1 day. 
+              This field is constant.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.TicksPerDayAbsoluteTime">
+            <summary>
+              Gets the number of absolute time ticks in 1 day. 
+              This field is constant.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.TicksPerHour">
+            <summary>
+              Gets the number of ticks in 1 hour. This field is constant.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.TicksPerHourAbsoluteTime">
+            <summary>
+              Gets the number of absolute time ticks in 1 hour. This field is constant.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.TicksPerMillisecond">
+            <summary>
+              Gets the number of ticks in 1 millisecond. This field is constant.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.TicksPerMillisecondAbsoluteTime">
+            <summary>
+              Gets the number of ticks in 1 millisecond. This field is constant.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.TicksPerMinute">
+            <summary>
+              Gets the number of ticks in 1 minute. This field is constant.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.TicksPerMinuteAbsoluteTime">
+            <summary>
+              Gets the number of absolute time ticks in 1 minute. This field is constant.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.TicksPerSecond">
+            <summary>
+              Gets the number of ticks in 1 second.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.TicksPerSecondAbsoluteTime">
+            <summary>
+              Gets the number of ticks in 1 second.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.Duration">
+            <summary>
+              Gets the absolute time in seconds of the current TimeCode object.
+            </summary>
+            <returns>
+              A double that is the absolute time in seconds duration of the current TimeCode object.
+            </returns>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.FrameRate">
+            <summary>
+              Gets or sets the current SMPTE framerate for this TimeCode instance.
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.TotalFrames">
+            <summary>
+              Gets the value of the current TimeCode structure expressed in frames.
+            </summary>
+            <returns>
+              The total number of frames represented by this instance.
+            </returns>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.TotalSeconds">
+            <summary>
+              Gets the value of the current TimeCode structure expressed in whole
+              and fractional seconds.
+            </summary>
+            <returns>
+              The total number of seconds represented by this instance.
+            </returns>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DataTransform.TimeCode.Total100Ns">
+            <summary>
+              Gets the value of the current TimeCode structure expressed in whole
+              and fractional 100NS.
+            </summary>
+            <returns>
+              The total number of 100NS represented by this instance.
+            </returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DataTransform.TimeSpanExtensions">
+            <summary>
+             TimeSpanExtensions
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeSpanExtensions.ReadableTime(System.TimeSpan)">
+            <summary>
+            ReadableTime
+            </summary>
+            <param name="ts"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DataTransform.TimeTransferHelper">
+            <summary>
+            时间转换帮助类
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeTransferHelper.SecondsToTimeString(System.Double,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+             <summary>
+            秒转换为时间格式00:00:00.00
+             </summary>
+             <param name="time"></param>
+             <param name="frameRate"></param>
+             <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeTransferHelper.FrameToTimeString(System.Int64,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+            帧转换为时间格式
+            </summary>
+            <param name="frame"></param>
+            <param name="frameRate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeTransferHelper.FramesToSeconds(System.Int64,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+            帧转换为秒
+            </summary>
+            <param name="frame"></param>
+            <param name="frameRate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeTransferHelper.SecondsToFrames(System.Double,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+            秒转换为帧
+            </summary>
+            <param name="second"></param>
+            <param name="frameRate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeTransferHelper.NanosecondsToFrame(System.Double,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+            百纳秒转换为帧
+            </summary>
+            <param name="nanoseconds"></param>
+            <param name="frameRate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeTransferHelper.NanosecondsToTimeString(System.Double,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+            百纳秒转换为时间格式
+            </summary>
+            <param name="nanoseconds"></param>
+            <param name="frameRate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DataTransform.TimeTransferHelper.FrameToNanoseconds(System.Int64,AI3.Common.Core.Utility.DataTransform.SmpteFrameRate)">
+            <summary>
+            帧转换为百纳秒
+            </summary>
+            <param name="frame"></param>
+            <param name="frameRate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.Extensions.Extensions">
+            <summary>
+              扩展方法
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.Extensions.Extensions.ToObject``1(System.String)">
+            <summary>
+              从JSON字符串获取对象
+            </summary>
+            <typeparam name = "TObject">需要转换的对象类型</typeparam>
+            <param name = "str">json字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.Extensions.Extensions.ToJson``1(``0)">
+            <summary>
+              将对象转为JSON字符串
+            </summary>
+            <param name = "obj">需要转换的对象</param>
+            <typeparam name = "TObject">对象类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.Extensions.Extensions.ToObjectFromXml``1(System.String)">
+            <summary>
+              从XML字符串获取对象
+            </summary>
+            <typeparam name = "TObject">需要转换的对象类型</typeparam>
+            <param name = "str">json字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.Extensions.Extensions.ToXml``1(``0)">
+            <summary>
+              将对象转为XML字符串
+            </summary>
+            <param name = "obj">需要转换的对象</param>
+            <typeparam name = "TObject">对象类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.Extensions.Extensions.SafeObject``1(``0)">
+            <summary>
+              安全对象
+            </summary>
+            <typeparam name = "TObject">对象类型</typeparam>
+            <param name = "obj">对象自己</param>
+            <returns>永远不会未将对象XXXXXX的对象</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.Extensions.Extensions.ToInt32``1(``0)">
+            <summary>
+            将一个对象转化为Int型数据，为空时时返回0
+            </summary>
+            <param name="obj">要转化为Int型数据的对象</param>
+            <returns>Int型数据，若转化失败返回0</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.Extensions.Extensions.ToDateTime``1(``0)">
+            <summary>
+            将一个对象转化为日期型数据
+            </summary>
+            <param name="obj">要进行转化的对象</param>
+            <returns>返回时间型数据,若转化失败,则返回DateTime的默认值(1900-1-1)</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.Extensions.Extensions.ToBoolean``1(``0)">
+            <summary>
+            将一个对象转化为逻辑性数据
+            </summary>
+            <param name="obj">要进行转化的对象</param>
+            <returns>返回布尔值,若转化失败,返回布尔型的默认值</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.Extensions.Extensions.ToDecimal``1(``0)">
+            <summary>
+            将一个对象转化为实数类型
+            </summary>
+            <param name="obj">要进行转化的对象</param>
+            <returns>返回实数类型,若转化失败,返回实数的默认值</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.Extensions.Extensions.ToDouble``1(``0)">
+            <summary>
+            转化为实数类型，发生异常时返回默认，而不报错
+            </summary>
+            <param name="obj">要进行转化的对象</param>
+            <returns>返回实数类型,若转化失败,返回实数的默认值</returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.IsolatedStorageHelper">
+            <summary>
+              存储帮助类
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.IsolatedStorageHelper.Instance">
+            <summary>
+              单一实例
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.CopyDirectory(System.String,System.String)">
+            <summary>
+              复制目录
+            </summary>
+            <param name = "oldDirFullPath">源目录</param>
+            <param name = "newDirPath">目标目录</param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.CopyFile(System.String,System.String)">
+            <summary>
+              复制文件
+            </summary>
+            <param name = "oldFileFullPath">源文件</param>
+            <param name = "newDirPath">目标文件</param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.CreateDirectory(System.String)">
+            <summary>
+              创建目录
+            </summary>
+            <param name = "directoryPath">目录路径</param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.CreateDirectory(System.String,System.Boolean)">
+            <summary>
+              创建目录
+            </summary>
+            <param name = "directoryPath">目录路径</param>
+            <param name = "checkedQuota"></param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.CreateFile(System.String,System.String,System.Boolean)">
+            <summary>
+              创建文件
+            </summary>
+            <param name = "fullFileName">文件路径</param>
+            <param name = "content">内容</param>
+            <param name = "rewriteFile">是否重写</param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.CreateFile(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+              创建文件
+            </summary>
+            <param name = "fileName">文件名</param>
+            <param name = "fileExtension">扩展名</param>
+            <param name = "content">内容</param>
+            <param name = "rewriteFile">是否重写</param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.CreateFile(System.String,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+              创建文件
+            </summary>
+            <param name = "fileName">文件名</param>
+            <param name = "fileExtension">扩展名</param>
+            <param name = "content">内容</param>
+            <param name = "rewriteFile">是否重写</param>
+            <param name = "checkedQuota"></param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.DeleteDirectory(System.String)">
+            <summary>
+              删除目录
+            </summary>
+            <param name = "directoryName"></param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.DeleteFile(System.String)">
+            <summary>
+              删除文件
+            </summary>
+            <param name = "fileName">文件路径</param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.GetFileContent(System.String)">
+            <summary>
+              获取文件内容
+            </summary>
+            <param name = "fileName">文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.GetFiles(System.String)">
+            <summary>
+              获取文件列表
+            </summary>
+            <param name = "directory">目录</param>
+            <returns>文件列表</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.GetItemDir(System.String)">
+            <summary>
+              获取路径的目录
+            </summary>
+            <param name = "fullPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.GetItemName(System.String)">
+            <summary>
+              获取项名称
+            </summary>
+            <param name = "fullPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.GetRootDirectories">
+            <summary>
+              获取跟目录子目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.GetRootFiles">
+            <summary>
+              获取跟目录文件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.GetSubDirectories(System.String)">
+            <summary>
+              获取子目录
+            </summary>
+            <param name = "directory">目录路径</param>
+            <returns>子目录</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.#ctor(System.Int64)">
+            <summary>
+              初始化
+            </summary>
+            <param name = "size">大小</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.IsolatedStorageHelper.#ctor">
+            <summary>
+              初始化
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.SerializeService.XmlSerialize">
+            <summary>
+              XML序列化、反序列化服务
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.SerializeService.ISerializeService">
+            <summary>
+              序列化服务服务接口
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.ISerializeService.Deserialize``1(System.String,System.Text.Encoding)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "data">字符串</param>
+            <param name = "encoder">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.ISerializeService.Deserialize``1(System.String)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "data">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.ISerializeService.Deserialize(System.String,System.Text.Encoding)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <param name = "data">字符串</param>
+            <param name = "encoder">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.ISerializeService.Deserialize(System.String)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <param name = "data">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.ISerializeService.Deserialize``1(System.Byte[])">
+            <summary>
+              将字节数组反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "data">字节数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.ISerializeService.Deserialize(System.Byte[])">
+            <summary>
+              将字节数组反序列化为对象
+            </summary>
+            <param name = "data">字节数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.ISerializeService.Deserialize``1(System.IO.MemoryStream)">
+            <summary>
+              将内存流反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "ms">System.IO.MemoryStream</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.ISerializeService.Deserialize(System.IO.MemoryStream)">
+            <summary>
+              将内存流反序列化为对象
+            </summary>
+            <param name = "ms">System.IO.MemoryStream</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.ISerializeService.SerializeToByteArray``1(``0)">
+            <summary>
+              将对象序列化为字节数组
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <returns>字节数组</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.ISerializeService.SerializeToMemoryStream``1(``0)">
+            <summary>
+              将对象序列化为内存流
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <returns>内存流</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.ISerializeService.SerializeToString``1(``0,System.Text.Encoding)">
+            <summary>
+              将对象序列化为字符串
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <param name = "encoder">编码</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.ISerializeService.SerializeToString``1(``0)">
+            <summary>
+              将对象序列化为字符串
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.XmlSerialize.SerializeToString``1(``0,System.Text.Encoding)">
+            <summary>
+              将对象序列化为字符串
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <param name = "encoder">编码</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.XmlSerialize.SerializeToString``1(``0)">
+            <summary>
+              将对象序列化为字符串
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.XmlSerialize.SerializeToByteArray``1(``0)">
+            <summary>
+              将对象序列化为字节数组
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <returns>字节数组</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.XmlSerialize.SerializeToMemoryStream``1(``0)">
+            <summary>
+              将对象序列化为内存流
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <returns>内存流</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.XmlSerialize.Deserialize``1(System.String,System.Text.Encoding)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "data">字符串</param>
+            <param name = "encoder">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.XmlSerialize.Deserialize``1(System.String)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "data">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.XmlSerialize.Deserialize(System.String,System.Text.Encoding)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <param name = "data">字符串</param>
+            <param name = "encoder">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.XmlSerialize.Deserialize(System.String)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <param name = "data">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.XmlSerialize.Deserialize``1(System.Byte[])">
+            <summary>
+              将字节数组反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "data">字节数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.XmlSerialize.Deserialize(System.Byte[])">
+            <summary>
+              将字节数组反序列化为对象
+            </summary>
+            <param name = "data">字节数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.XmlSerialize.Deserialize``1(System.IO.MemoryStream)">
+            <summary>
+              将内存流反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "ms">System.IO.MemoryStream</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.XmlSerialize.Deserialize(System.IO.MemoryStream)">
+            <summary>
+              将内存流反序列化为对象
+            </summary>
+            <param name = "ms">System.IO.MemoryStream</param>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.TimeHelper">
+            <summary>
+            时间格式转换
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.TimeHelper.DateDiff(System.DateTime,System.DateTime)">
+            <summary>
+            返回时间差
+            </summary>
+            <param name="dateTime1">DateTime1</param>
+            <param name="dateTime2">DateTime2</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.TimeHelper.GetMonthLastDate(System.Int32,System.Int32)">
+            <summary>
+            返回某年某月最后一天
+            </summary>
+            <param name="year">年份</param>
+            <param name="month">月份</param>
+            <returns>日</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.TimeHelper.MinuteToSecond(System.Int32)">
+            <summary>
+            把分钟转换成秒
+            </summary>
+            <param name="minute">分钟数</param>
+            <returns>秒数</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.TimeHelper.SecondToMinute(System.Int32)">
+            <summary>
+            把秒转换成分钟
+            </summary>
+            <param name="second">秒数</param>
+            <returns>分钟数</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.TimeHelper.DateTimeToString(System.DateTime)">
+            <summary>
+            时间转换为字符串(默认yyyy-MM-ddTHH:mm:ss)
+            </summary>
+            <param name="dateTime">时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.TimeHelper.DateTimeToString(System.String,System.DateTime)">
+            <summary>
+            时间转换为字符串
+            </summary>
+            <param name="fromat">格式</param>
+            <param name="dateTime">时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.TimeHelper.D100NsToSecond(System.Double)">
+            <summary>
+            百纳秒转化为秒
+            </summary>
+            <param name="d100Ns">百纳秒</param>
+            <returns>秒</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.TimeHelper.SecondToD100Ns(System.Double)">
+            <summary>
+            秒转化为百纳秒
+            </summary>
+            <param name="seconds">秒</param>
+            <returns>百纳秒</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.TimeHelper.SecondToDateTimeString(System.String,System.Int32)">
+            <summary>
+            秒转换为时码
+            </summary>
+            <param name="fromat">格式</param>
+            <param name="seconds">秒数</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.TimeHelper.SecondToTimeString(System.Int32)">
+            <summary>
+            秒转换为时间字符串(默认HH:mm:ss)
+            </summary>
+            <param name="seconds">秒数</param>
+            <returns>HH:mm:ss格式的时码</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.TimeHelper.SecondToTimeStringForDuration(System.Double)">
+            <summary>
+            秒转换为时间字符串专为音频时长计算使用(默认HH:mm:ss:ms)
+            </summary>
+            <param name="durationSeconds">秒数</param>
+            <returns>HH:mm:ss:ms格式的时码</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.TimeHelper.SecondToTimeString(System.Double)">
+            <summary>
+            秒转换为时间字符串(默认HH:mm:ss:ms)
+            </summary>
+            <param name="seconds">秒数</param>
+            <returns>HH:mm:ss:ms格式的时码</returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DEncrypt.AESEncrypt">
+            <summary>
+            AES加解密
+            AES作为新一代的数据加密标准汇聚了强安全性、高性能、高效率、易用和灵活等优点。
+            AES设计有三个密钥长度:128,192,256位，相对而言，AES的128密钥比DES的56密钥强1021倍。
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.AESEncrypt.Encrypt(System.String)">
+            <summary>
+            默认Key加密(Key=SobeyMAM)
+            </summary>
+            <param name="text">需要加密的明文</param>
+            <returns>加密的明文文</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.AESEncrypt.Encrypt(System.String,System.String)">
+            <summary> 
+            加密数据 
+            </summary> 
+            <param name="text">需要加密的明文</param> 
+            <param name="sKey">密钥</param> 
+            <returns>加密的明文文</returns> 
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.AESEncrypt.Encrypt(System.String,System.String,System.String)">
+            <summary>
+            加密数据 
+            </summary> 
+            <param name="text">需要加密的明文</param> 
+            <param name="sKey">密钥</param> 
+            <param name="vector">向量</param>
+            <returns>加密后的密文</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.AESEncrypt.Encrypt(System.Byte[],System.String)">
+            <summary>
+            加密数据 
+            </summary> 
+            <param name="data">需要加密的明文</param> 
+            <param name="sKey">密钥</param> 
+            <returns>加密后的密文</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.AESEncrypt.Encrypt(System.Byte[],System.String,System.String)">
+            <summary>
+            AES加密byte[]
+            </summary>
+            <param name="data">被加密的明文</param>
+            <param name="key">密钥</param>
+            <param name="vector">向量</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.AESEncrypt.Decrypt(System.String)">
+            <summary>
+            默认Key解密(Key=SobeyMAM)
+            </summary>
+            <param name="text">要解密的密文</param>
+            <returns>解密的明文</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.AESEncrypt.Decrypt(System.String,System.String)">
+            <summary> 
+            解密数据 
+            </summary> 
+            <param name="text">要解密的密文</param> 
+            <param name="sKey">密钥</param> 
+            <returns>解密的明文</returns> 
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.AESEncrypt.Decrypt(System.String,System.String,System.String)">
+            <summary>
+            解密数据 
+            </summary> 
+            <param name="text">要解密的密文</param> 
+            <param name="sKey">密钥</param> 
+            <param name="vector">向量</param>
+            <returns>解密的明文</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.AESEncrypt.Decrypt(System.Byte[],System.String)">
+            <summary>
+            解密数据 
+            </summary> 
+            <param name="data">要解密的密文</param> 
+            <param name="sKey">密钥</param>
+            <returns>解密的明文</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.AESEncrypt.Decrypt(System.Byte[],System.String,System.String)">
+            <summary>
+            AES解密byte[]
+            </summary>
+            <param name="data">被解密的密文</param>
+            <param name="key">密钥</param>
+            <param name="vector">向量</param>
+            <returns>明文</returns>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.DEncrypt.AESEncrypt.Iv">
+            <summary> 
+            获取向量 
+            </summary> 
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DEncrypt.HashEncode">
+            <summary>
+            得到随机安全码（哈希加密）。
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.HashEncode.#ctor">
+            <summary>
+            得到随机安全码构造函数
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.HashEncode.GetRandomValue">
+            <summary>
+            得到一个随机数值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.HashEncode.GetSecurity">
+            <summary>
+            得到随机哈希加密字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.HashEncode.HashEncoding(System.String)">
+            <summary>
+            哈希加密一个字符串
+            </summary>
+            <param name="Security"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DEncrypt.MD5">
+            <summary>
+            Summary description for MD5.
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DEncrypt.MD5.buffer">
+            <summary>
+            input buffer
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DEncrypt.MD5.count">
+            <summary>
+            number of bits, modulo 2^64 (lsb first)
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.DEncrypt.MD5.state">
+            <summary>
+            state (ABCD)
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.MD5.Initialize">
+            <summary>
+            MD5 initialization. Begins an MD5 operation, writing a new context.
+            </summary>
+            <remarks>
+            The RFC named it "MD5Init"
+            </remarks>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.MD5.HashCore(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            MD5 block update operation. Continues an MD5 message-digest
+            operation, processing another message block, and updating the
+            context.
+            </summary>
+            <param name="input"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <remarks>The RFC Named it MD5Update</remarks>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.MD5.HashFinal">
+            <summary>
+            MD5 finalization. Ends an MD5 message-digest operation, writing the
+            the message digest and zeroizing the context.
+            </summary>
+            <returns>message digest</returns>
+            <remarks>The RFC named it MD5Final</remarks>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.MD5.Decode(System.UInt32[],System.Int32,System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Decodes input (byte) into output (uint). Assumes len is
+            a multiple of 4.
+            </summary>
+            <param name="output"></param>
+            <param name="outputOffset"></param>
+            <param name="input"></param>
+            <param name="inputOffset"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.MD5.Encode(System.Byte[],System.Int32,System.UInt32[],System.Int32,System.Int32)">
+            <summary>
+            Encodes input (uint) into output (byte). Assumes len is
+             multiple of 4.
+            </summary>
+            <param name="output"></param>
+            <param name="outputOffset"></param>
+            <param name="input"></param>
+            <param name="inputOffset"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.MD5.FF(System.UInt32@,System.UInt32,System.UInt32,System.UInt32,System.UInt32,System.Byte,System.UInt32)">
+            FF, GG, HH, and II transformations 
+            for rounds 1, 2, 3, and 4.
+            Rotation is separate from addition to prevent recomputation.
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.MD5.ROTATE_LEFT(System.UInt32,System.Byte)">
+            <summary>
+            rotates x left n bits.
+            </summary>
+            <param name="x"></param>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.MD5.Transform(System.Byte[],System.Int32)">
+            <summary>
+            MD5 basic transformation. Transforms state based on 64 bytes block.
+            </summary>
+            <param name="block"></param>
+            <param name="offset"></param>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.DEncrypt.MD5DEncrypt">
+            <summary>
+            MD5相关操作
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.MD5DEncrypt.EncryptMD5(System.String)">
+            <summary>
+            MD5加密
+            </summary>
+            <param name="input">需要加密的字符串</param>
+            <returns>加密后字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.MD5DEncrypt.EncryptShortMD5(System.String)">
+            <summary>
+            MD5加密
+            </summary>
+            <param name="input">需要加密的字符串</param>
+            <returns>加密后字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.DEncrypt.MD5DEncrypt.ValidateMD5(System.String,System.String)">
+            <summary>
+            MD5验证
+            </summary>
+            <param name="input">需要验证的字符串</param>
+            <param name="encryptedValue">密文</param>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.RandomCodeHelper">
+            <summary>
+              随机数操作类
+              Liujianming 2010-3-21
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.RandomCodeHelper.GetRandomCode(System.String,System.Int32)">
+            <summary>
+              从字符串里随机得到，规定个数的字符串.
+            </summary>
+            <param name = "allChar"></param>
+            <param name = "codeCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.RandomCodeHelper.MakeRandomString(System.Int32)">
+            <summary>
+              生成随机字符串
+            </summary>
+            <param name = "pwdlen">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.RandomCodeHelper.MakeRandomString(System.String,System.Int32)">
+            <summary>
+              生成随机字符串
+            </summary>
+            <param name = "pwdchars">生成的串中包含的字符</param>
+            <param name = "pwdlen">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.RandomCodeHelper.RandomNum(System.Int32)">
+            <summary>
+              生成随机数
+            </summary>
+            <param name = "intlong"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.SerializeService.BinarySerialize">
+            <summary>
+              Binary序列化、反序列化服务
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinarySerialize.Deserialize``1(System.String,System.Text.Encoding)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "data">字符串</param>
+            <param name = "encoder">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinarySerialize.Deserialize``1(System.String)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "data">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinarySerialize.Deserialize(System.String,System.Text.Encoding)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <param name = "data">字符串</param>
+            <param name = "encoder">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinarySerialize.Deserialize(System.String)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <param name = "data">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinarySerialize.Deserialize``1(System.Byte[])">
+            <summary>
+              将字节数组反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "data">字节数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinarySerialize.Deserialize(System.Byte[])">
+            <summary>
+              将字节数组反序列化为对象
+            </summary>
+            <param name = "data">字节数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinarySerialize.Deserialize``1(System.IO.MemoryStream)">
+            <summary>
+              将内存流反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "ms">System.IO.MemoryStream</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinarySerialize.Deserialize(System.IO.MemoryStream)">
+            <summary>
+              将内存流反序列化为对象
+            </summary>
+            <param name = "ms">System.IO.MemoryStream</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinarySerialize.SerializeToByteArray``1(``0)">
+            <summary>
+              将对象序列化为字节数组
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <returns>字节数组</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinarySerialize.SerializeToMemoryStream``1(``0)">
+            <summary>
+              将对象序列化为内存流
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <returns>内存流</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinarySerialize.SerializeToString``1(``0,System.Text.Encoding)">
+            <summary>
+              将对象序列化为字符串
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <param name = "encoder">编码</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinarySerialize.SerializeToString``1(``0)">
+            <summary>
+              将对象序列化为字符串
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.SerializeService.BinaryHelper">
+            <summary>
+              BinaryHelper
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.SerializeService.BinaryHelper.Instance">
+            <summary>
+              单一实例
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinaryHelper.Deserialize``1(System.String)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <typeparam name = "T">类型</typeparam>
+            <param name = "strData">源字符串</param>
+            <returns>反序列化后的对象</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinaryHelper.Deserialize(System.IO.MemoryStream)">
+            <summary>
+              将字符流反序列化为对象
+            </summary>
+            <param name = "ms">源字符流</param>
+            <returns>反序列化后的对象</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinaryHelper.Serialize``1(``0)">
+            <summary>
+              将对象序列化为字符串
+            </summary>
+            <param name = "obj">源对象</param>
+            <returns>序列化后的字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.BinaryHelper.SerializeToMemoryStream``1(``0)">
+            <summary>
+              将对象序列化为字符流
+            </summary>
+            <typeparam name = "T">类型</typeparam>
+            <param name = "obj">源对象</param>
+            <returns>序列化后的字符流</returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.SerializeService.JsonSerialize">
+            <summary>
+              Json字符串 序列化或反序列化
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.JsonSerialize.Deserialize``1(System.String,System.Text.Encoding)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "data">字符串</param>
+            <param name = "encoder">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.JsonSerialize.Deserialize``1(System.String)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "data">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.JsonSerialize.Deserialize(System.String,System.Text.Encoding)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <param name = "data">字符串</param>
+            <param name = "encoder">编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.JsonSerialize.Deserialize(System.String)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <param name = "data">字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.JsonSerialize.Deserialize``1(System.Byte[])">
+            <summary>
+              将字节数组反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "data">字节数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.JsonSerialize.Deserialize(System.Byte[])">
+            <summary>
+              将字节数组反序列化为对象
+            </summary>
+            <param name = "data">字节数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.JsonSerialize.Deserialize``1(System.IO.MemoryStream)">
+            <summary>
+              将内存流反序列化为对象
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "ms">System.IO.MemoryStream</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.JsonSerialize.Deserialize(System.IO.MemoryStream)">
+            <summary>
+              将内存流反序列化为对象
+            </summary>
+            <param name = "ms">System.IO.MemoryStream</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.JsonSerialize.SerializeToByteArray``1(``0)">
+            <summary>
+              将对象序列化为字节数组
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <returns>字节数组</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.JsonSerialize.SerializeToMemoryStream``1(``0)">
+            <summary>
+              将对象序列化为内存流
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <returns>内存流</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.JsonSerialize.SerializeToString``1(``0,System.Text.Encoding)">
+            <summary>
+              将对象序列化为字符串
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <param name = "encoder">编码</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.JsonSerialize.SerializeToString``1(``0)">
+            <summary>
+              将对象序列化为字符串
+            </summary>
+            <typeparam name = "T">对象类型</typeparam>
+            <param name = "obj">对象值</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.SerializeService.JsonHelper">
+            <summary>
+              JsonHelper
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.Utility.SerializeService.JsonHelper.Instance">
+            <summary>
+              单一实例
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.JsonHelper.Deserialize``1(System.String)">
+            <summary>
+              将字符串反序列化为对象
+            </summary>
+            <typeparam name = "T">类型</typeparam>
+            <param name = "strData">源字符串</param>
+            <returns>反序列化后的对象</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.SerializeService.JsonHelper.Serialize(System.Object)">
+            <summary>
+              将对象序列化为字符串
+            </summary>
+            <param name = "obj">源对象</param>
+            <returns>序列化后的字符串</returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.SerializeService.SerializeProxy">
+            <summary>
+              序列化服务代理
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.SerializeService.SerializeProxy.BinarySerialize">
+            <summary>
+              获取Binary序列化服务
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.SerializeService.SerializeProxy.JsonSerialize">
+            <summary>
+              获取JSON序列化服务
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.Utility.SerializeService.SerializeProxy.XmlSerialize">
+            <summary>
+              获取Xml序列化服务
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.StringHelper">
+            <summary>
+              字符串处理帮助类
+              2009-6-23
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.DelLastChar(System.String,System.String)">
+            <summary>
+              删除最后结尾的指定字符后的字符
+            </summary>
+            <param name = "str">源字符串</param>
+            <param name = "strchar">分隔符</param>
+            <returns>去掉结尾字符后的字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.DelLastComma(System.String)">
+            <summary>
+              删除最后结尾的一个逗号
+            </summary>
+            <param name = "str">源字符串</param>
+            <returns>去掉结尾一个逗号后的字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.GetArrayStr(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+              字符串数组转换为字符串
+            </summary>
+            <param name = "list">字符数组</param>
+            <param name = "speater">分隔符</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.GetChineseOneIndex(System.String)">
+            <summary>
+              获取一个汉字的拼音声母
+            </summary>
+            <param name = "chinese">Unicode格式的一个汉字</param>
+            <returns>汉字的声母</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.GetChineseOneIndex(System.Char)">
+            <summary>
+              获取一个汉字的拼音声母
+            </summary>
+            <param name = "chinese">Unicode格式的一个汉字</param>
+            <returns>汉字的声母</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.GetChineseStringIndex(System.String)">
+            <summary>
+              获取一串汉字的拼音声母
+            </summary>
+            <param name = "chinese">Unicode格式的汉字字符串</param>
+            <returns>拼音声母字符串</returns>
+            <example>
+              “新桥软件”转换为“xqrj”
+            </example>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.GetCleanStyle(System.String,System.String)">
+            <summary>
+              掉分隔符
+            </summary>
+            <param name = "strList"></param>
+            <param name = "splitString">分割字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.GetNewStyle(System.String,System.String,System.String,System.String@)">
+            <summary>
+              将字符串转换为新样式
+            </summary>
+            <param name = "strList">源字符串</param>
+            <param name = "newStyle">新样式</param>
+            <param name = "splitString">分隔符</param>
+            <param name = "error">错误信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.GetStrArray(System.String)">
+            <summary>
+              分割字符串为字符串数组(分隔符为逗号)
+            </summary>
+            <param name = "str">源字符串</param>
+            <returns>字符串数组</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.GetStringLength(System.String)">
+            <summary>
+              得到字符串真实长度, 1个汉字长度为2,一个大写算1.5个
+            </summary>
+            <returns>字符长度</returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.GetSubStringList(System.String,System.Char)">
+            <summary>
+              分割字符串为字符串数组(分隔符为逗号)
+            </summary>
+            <param name = "oStr"></param>
+            <param name = "sepeater"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.GetSubStringList(System.String,System.Char,System.Boolean)">
+            <summary>
+              分割字符串为字符串数组(分隔符为逗号)
+            </summary>
+            <param name = "str">源字符串</param>
+            <param name = "speater">分隔符</param>
+            <param name = "toLower">是否转行为小写</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.SubString(System.String,System.Int32,System.String)">
+            <summary>
+              字符串截断
+            </summary>
+            <param name = "input">源字符串</param>
+            <param name = "length">长度</param>
+            <param name = "substitute">超过长度的标示，如“...”，不填就不会再后面打点</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.ToDbc(System.String)">
+            <summary>
+              转半角的函数(SBC case)
+            </summary>
+            <param name = "input">输入</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.StringHelper.ToSbc(System.String)">
+            <summary>
+              转全角的函数(SBC case)
+            </summary>
+            <param name = "input"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.UIUility.Animation">
+            <summary>
+            实现一个UI元素移动的动画。
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.UIUility.Animation.Move(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.Windows.Controls.Panel,System.Single,System.EventHandler)">
+            <summary>
+            将fromElement从fromElement的位置移动到toElement的位置，实现fromElement移动的动画，不会真正移动fromElement。
+            </summary>
+            <param name="fromElement">开始的元素。</param>
+            <param name="toElement">结束的元素。</param>
+            <param name="root">根Panel，一般是最高级的Panel对象。</param>
+            <param name="seconds">动画持续的秒数。</param>
+            <param name="callBack_Moved">移动结束的回调函数。</param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.UIUility.Animation.Move(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.Windows.Controls.Panel,System.EventHandler)">
+            <summary>
+            将fromElement从fromElement的位置移动到toElement的位置，实现fromElement移动的动画，不会真正移动fromElement。
+            </summary>
+            <param name="fromElement">开始的元素。</param>
+            <param name="toElement">结束的元素。</param>
+            <param name="root">根Panel，一般是最高级的Panel对象。</param>
+            <param name="callBack_Moved">移动结束的回调函数。</param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.UIUility.Animation.Move(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.Windows.Controls.Panel)">
+            <summary>
+            将fromElement从fromElement的位置移动到toElement的位置，实现fromElement移动的动画，不会真正移动fromElement。
+            </summary>
+            <param name="fromElement">开始的元素。</param>
+            <param name="toElement">结束的元素。</param>
+            <param name="root">根Panel，一般是最高级的Panel对象。</param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.UIUility.Animation.Move(System.Windows.FrameworkElement,System.Double,System.Double,System.Windows.Controls.Panel,System.Single,System.EventHandler)">
+            <summary>
+            移动一个元素。
+            </summary>
+            <param name="fromElement">被移动的元素。</param>
+            <param name="offsetX">X坐标偏移量。</param>
+            <param name="offsetY">Y坐标偏移量。</param>
+            <param name="root">根Panel，一般是最高级的Panel对象。</param>
+            <param name="seconds">动画持续的秒数。</param>
+            <param name="callBack_Moved">移动结束的回调函数。</param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.UIUility.Animation.Move(System.Windows.Media.TranslateTransform,System.Windows.Point,System.Single,System.EventHandler)">
+            <summary>
+            实现一个translateTransform动画。
+            </summary>
+            <param name="translateTransform">指定的translateTransform。</param>
+            <param name="toPoint">移动到的位置。</param>
+            <param name="seconds">动画持续的秒数。</param>
+            <param name="callBack_Moved">移动结束的回调函数。</param>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.UIUility.Animation.Move(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.Double,System.Double,System.Windows.Controls.Panel)">
+            <summary>
+            移动一个元素到指定元素的位置。
+            </summary>
+            <param name="fromElement">被移动的元素。</param>
+            <param name="toElement">指定的元素。</param>
+            <param name="offsetX">X坐标偏移量。</param>
+            <param name="offsetY">Y坐标偏移量。</param>
+            <param name="root">根Panel，一般是最高级的Panel对象。</param>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.UIUility.DependencyObjectExt">
+            <summary>
+            UI控件查找扩展
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.UIUility.DependencyObjectExt.FindChildren``1(System.Windows.DependencyObject)">
+            <summary>
+            找出控件下所有指定类型的子控件
+            其中第一个参数是父控件名称，而第二个参数是特定子控件类型。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="parent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.UIUility.DependencyObjectExt.GetChildObjects``1(System.Windows.DependencyObject,System.String)">
+            <summary>
+            该方法将把所有子控件作为List集合返回到客户端。
+            其中第一个参数是父控件参数，而第二个参数是特定子控件名称，
+            如果需要遍历全部子控件，第二个参数留空即可。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.UIUility.DependencyObjectExt.GetParentObject``1(System.Windows.DependencyObject,System.String)">
+            <summary>
+            获取父控件方法。
+            该方法将根据当前控件，遍历查找其父控件是否存在。
+            参数1是表示当前子控件名，参数2是要查询父控件名；
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.UIUility.DependencyObjectExt.GetChildObject``1(System.Windows.DependencyObject,System.String)">
+            <summary>
+            获取子控件方法。
+            该方法将根据当前控件，遍历查找其子控件是否存在。
+            参数1是表示当前父控件名，参数2是要查询子控件名；
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.Utility.ZipObjectService.JsonExtension">
+            <summary>
+             解析JSON的扩展方法
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.ZipObjectService.JsonExtension.ToObject``1(System.String)">
+            <summary>
+            从JSON字符串获取对象
+            </summary>
+            <typeparam name="TObject">需要转换的对象类型</typeparam>
+            <param name="str">json字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.Utility.ZipObjectService.JsonExtension.ToJson``1(``0)">
+            <summary>
+             将对象转为JSON字符串
+            </summary>
+            <param name="obj">需要转换的对象</param>
+            <typeparam name="TObject">对象类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:AI3.Common.Core.WSRequest.RequestActuator">
+            <summary>
+              请求执行器
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.WSRequest.RequestActuator.#ctor(System.String)">
+            <summary>
+              请求执行器
+            </summary>
+            <param name = "serviceUrl">服务地址</param>
+        </member>
+        <member name="M:AI3.Common.Core.WSRequest.RequestActuator.GetServiceRequest(AI3.Common.Core.WSRequest.RequestModel,System.EventHandler)">
+            <summary>
+              从服务端请求数据
+            </summary>
+            <param name = "request">请求参数</param>
+            <param name = "requestCompleted">回调函数</param>
+        </member>
+        <member name="M:AI3.Common.Core.WSRequest.RequestActuator.CloseClient">
+            <summary>
+            关闭连接
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.WSRequest.RequestHelper">
+            <summary>
+              请求执行器
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.WSRequest.RequestHelper.Instance">
+            <summary>
+              单一实例
+            </summary>
+        </member>
+        <member name="M:AI3.Common.Core.WSRequest.RequestHelper.GetServiceHostAddress">
+            <summary>
+              获取服务访问地址(http://host/vpath/)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.WSRequest.RequestHelper.GetServiceRequest(AI3.Common.Core.WSRequest.RequestModel,System.EventHandler)">
+            <summary>
+              从服务端请求数据
+            </summary>
+            <param name = "request">请求参数</param>
+            <param name = "requestCompleted">回调函数</param>
+        </member>
+        <member name="M:AI3.Common.Core.WSRequest.RequestHelper.GetServiceURL">
+            <summary>
+              获取服务访问地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.WSRequest.RequestHelper.SetServiceURL(System.String)">
+            <summary>
+              设置服务访问地址
+            </summary>
+            <param name = "url"></param>
+        </member>
+        <member name="T:AI3.Common.Core.WSRequest.RequestModel">
+            <summary>
+              请求实体类
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.WSRequest.RequestModel.CommandName">
+            <summary>
+              命令名称
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.WSRequest.RequestModel.Parameters">
+            <summary>
+              方法参数
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.WSRequest.RequestModel.UserID">
+            <summary>
+              当前操作用户Id(框架统一赋值)
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.WSRequest.RequestModel.LoginType">
+            <summary>
+              当前登录应用名称(DCMP为了区分应用而设置的)这里写死为 Web
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.WSRequest.ResultState">
+            <summary>
+              返回状态
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.WSRequest.ResultState.Failure">
+            <summary>
+              请求失败（请把失败原因放在ResultData一并返回）
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.WSRequest.ResultState.Success">
+            <summary>
+              请求成功
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.WSRequest.RequestResultModel">
+            <summary>
+              请求返回实体类
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.WSRequest.RequestResultModel.ResultData">
+            <summary>
+              请求返回字符数据
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.WSRequest.RequestResultModel.State">
+            <summary>
+              请求返回状态
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.WSRequest.ServiceStatusHelper">
+            <summary>
+              操作类
+            </summary>
+        </member>
+        <member name="F:AI3.Common.Core.WSRequest.ServiceStatusHelper.Instance">
+            <summary>
+              单一实例
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.WSRequest.ServiceStatusHelper.ServiceEnlable">
+            <summary>
+              服务端是否可用
+            </summary>
+        </member>
+        <member name="P:AI3.Common.Core.WSRequest.ServiceStatusHelper.StopWsRequest">
+            <summary>
+              是否阻止请求
+            </summary>
+        </member>
+        <member name="T:AI3.Common.Core.WSRequest.WcfServiceClientFactory`2">
+            <summary>
+             WcfServiceClientFactory
+            </summary>
+            <typeparam name="TServiceClient"></typeparam>
+            <typeparam name="TService"></typeparam>
+        </member>
+        <member name="M:AI3.Common.Core.WSRequest.WcfServiceClientFactory`2.CreateServiceClient">
+            <summary>
+             CreateServiceClient
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AI3.Common.Core.WSRequest.WcfServiceClientFactory`2.CreateServiceClient(System.String)">
+            <summary>
+             CreateServiceClient
+            </summary>
+            <param name="serviceAddress"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
