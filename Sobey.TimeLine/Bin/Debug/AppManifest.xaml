@@ -1,0 +1,14 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="Sobey.TimeLine" EntryPointType="Sobey.TimeLine.App" RuntimeVersion="5.0.61118.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="Sobey.TimeLine" Source="Sobey.TimeLine.dll" />
+    <AssemblyPart x:Name="AI3.Common.Core" Source="AI3.Common.Core.dll" />
+    <AssemblyPart x:Name="GalaSoft.MvvmLight.Extras.SL5" Source="GalaSoft.MvvmLight.Extras.SL5.dll" />
+    <AssemblyPart x:Name="GalaSoft.MvvmLight.SL5" Source="GalaSoft.MvvmLight.SL5.dll" />
+    <AssemblyPart x:Name="Microsoft.Practices.ServiceLocation" Source="Microsoft.Practices.ServiceLocation.dll" />
+    <AssemblyPart x:Name="Sobey.TimeLine.Model" Source="Sobey.TimeLine.Model.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls" Source="System.Windows.Controls.dll" />
+    <AssemblyPart x:Name="system.windows.controls.toolkit" Source="system.windows.controls.toolkit.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Toolkit.Internals" Source="System.Windows.Controls.Toolkit.Internals.dll" />
+    <AssemblyPart x:Name="System.Windows.Interactivity" Source="System.Windows.Interactivity.dll" />
+  </Deployment.Parts>
+</Deployment>
